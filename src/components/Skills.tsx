@@ -5,7 +5,6 @@ const skills = {
 	frontend: ['HTML5', 'CSS3', 'JavaScript', 'Typescript', 'React', 'Tailwind'],
 	backend: ['Node.js', 'Express', 'Java', 'Spring Boot', 'MySQL', 'SQLite'],
 	tools: ['Git', 'VS Code', 'npm', 'Maven'],
-
 	soft: ['Problem Solving', 'Team Collaboration', 'Communication'],
 };
 
