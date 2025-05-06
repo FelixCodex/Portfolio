@@ -12,9 +12,9 @@ const projects = [
 		image:
 			'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
 		tags: ['React', 'Node.js', 'Express', 'MySQL', 'In Process'],
-		liveUrl: '#',
 		hidden: false,
-		githubUrl: 'https://javier-david.com',
+		liveUrl: 'https://javier-david.com',
+		githubUrl: 'https://github.com/FelixCodex/j-ecommerce-client',
 	},
 	{
 		title: 'EasePassword',
@@ -43,7 +43,6 @@ const projects = [
 			'A collaborative task management application with real-time updates and team features.',
 		image: localproductyflowImg,
 		tags: ['Javascript', 'Spring Boot', 'MySQL', 'In Process'],
-		liveUrl: '#',
 		hidden: false,
 		githubUrl: 'https://github.com/FelixCodex/ProductyFlow',
 	},
@@ -99,7 +98,7 @@ function ProjectCard({
 	description: string;
 	image: string;
 	tags: string[];
-	liveUrl: string;
+	liveUrl?: string;
 	githubUrl: string;
 }) {
 	return (
@@ -124,15 +123,17 @@ function ProjectCard({
 					))}
 				</div>
 				<div className='flex gap-4'>
-					<a
-						href={liveUrl}
-						target='_blank'
-						rel='noopener noreferrer'
-						className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
-					>
-						<ExternalLink className='w-4 h-4' />
-						Live Demo
-					</a>
+					{liveUrl && (
+						<a
+							href={liveUrl}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
+						>
+							<ExternalLink className='w-4 h-4' />
+							Live Demo
+						</a>
+					)}
 					<a
 						href={githubUrl}
 						target='_blank'
