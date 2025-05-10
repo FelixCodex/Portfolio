@@ -10,7 +10,7 @@ const projects = [
 		subtitle: 'E-Commerce',
 		description: 'An E-Commerce to sell the 3d models of the artist',
 		image: javier,
-		tags: ['React', 'Node.js', 'Express', 'MySQL', 'In Process'],
+		tags: ['React', 'Node.js', 'Express', 'MySQL'],
 		hidden: false,
 		liveUrl: 'https://javier-david.com',
 		githubUrl: 'https://github.com/FelixCodex/j-ecommerce-client',
@@ -41,7 +41,7 @@ const projects = [
 		description:
 			'A collaborative task management application with real-time updates and team features.',
 		image: localproductyflowImg,
-		tags: ['Javascript', 'Spring Boot', 'MySQL', 'In Process'],
+		tags: ['Javascript', 'Spring Boot', 'MySQL'],
 		hidden: false,
 		githubUrl: 'https://github.com/FelixCodex/ProductyFlow',
 	},
