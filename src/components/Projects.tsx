@@ -1,16 +1,15 @@
-import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import localproductyflowImg from '../localproductyflow.webp';
 import kronoImg from '../krono.webp';
 import easepass from '../easepassword.webp';
+import javier from '../javier-david.webp';
 
 const projects = [
 	{
 		title: 'Artist Store',
 		subtitle: 'E-Commerce',
 		description: 'An E-Commerce to sell the 3d models of the artist',
-		image:
-			'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+		image: javier,
 		tags: ['React', 'Node.js', 'Express', 'MySQL', 'In Process'],
 		hidden: false,
 		liveUrl: 'https://javier-david.com',
