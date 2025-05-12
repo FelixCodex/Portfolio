@@ -10,7 +10,7 @@ const projects = [
 		subtitle: 'E-Commerce',
 		description: 'An E-Commerce to sell the 3d models of the artist',
 		image: javier,
-		tags: ['React', 'Node.js', 'Express', 'MySQL'],
+		tags: ['React', 'Node.js', 'Express', 'SQLite'],
 		hidden: false,
 		liveUrl: 'https://javier-david.com',
 		githubUrl: 'https://github.com/FelixCodex/j-ecommerce-client',
