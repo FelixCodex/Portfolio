@@ -20,18 +20,26 @@ export function Hero() {
 							{HERO.VIEW[language]}
 							<ArrowRight className='w-5 h-5 rotate-90' />
 						</a>
-						<a
-							href={
-								language == 'es'
-									? '/src/ResumeCV-es.pdf'
-									: '/src/ResumeCV-en.pdf'
-							}
-							download='JoséFelixCV.pdf'
-							className='inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-300 text-blue-700 px-6 py-3 rounded-lg transition-colors'
-						>
-							{HERO.CV[language]}
-							<File className='w-5 h-5' />
-						</a>
+
+						{language == 'es' ? (
+							<a
+								href='/src/ResumeCV-es.pdf'
+								download='JoséFelixCV.pdf'
+								className='inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-300 text-blue-700 px-6 py-3 rounded-lg transition-colors'
+							>
+								{HERO.CV[language]}
+								<File className='w-5 h-5' />
+							</a>
+						) : (
+							<a
+								href='/src/ResumeCV-en.pdf'
+								download='JoséFelixCV.pdf'
+								className='inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-300 text-blue-700 px-6 py-3 rounded-lg transition-colors'
+							>
+								{HERO.CV[language]}
+								<File className='w-5 h-5' />
+							</a>
+						)}
 					</div>
 				</div>
 			</div>
