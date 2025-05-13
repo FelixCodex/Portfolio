@@ -21,7 +21,11 @@ export function Hero() {
 							<ArrowRight className='w-5 h-5 rotate-90' />
 						</a>
 						<a
-							href='/src/ResumeCV.pdf'
+							href={
+								language == 'es'
+									? '/src/ResumeCV-es.pdf'
+									: '/src/ResumeCV-en.pdf'
+							}
 							download='JoséFelixCV.pdf'
 							className='inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-300 text-blue-700 px-6 py-3 rounded-lg transition-colors'
 						>
