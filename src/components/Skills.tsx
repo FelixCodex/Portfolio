@@ -1,5 +1,7 @@
 import React from 'react';
 import { Code, Server, Database, Layout } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
+import { SKILLS } from '../const';
 
 const skills = {
 	frontend: ['HTML5', 'CSS3', 'JavaScript', 'Typescript', 'React', 'Tailwind'],
@@ -9,6 +11,7 @@ const skills = {
 };
 
 export function Skills() {
+	const { language } = useLanguage();
 	return (
 		<section
 			id='skills'
@@ -16,26 +19,26 @@ export function Skills() {
 		>
 			<div className='container mx-auto px-4'>
 				<h2 className='text-3xl font-bold text-center mb-12'>
-					Technical Skills
+					{SKILLS.TITLE[language]}
 				</h2>
 				<div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
 					<SkillCard
-						title='Frontend'
+						title={SKILLS.FRONTEND[language]}
 						skills={skills.frontend}
 						icon={<Layout className='w-6 h-6' />}
 					/>
 					<SkillCard
-						title='Backend'
+						title={SKILLS.BACKEND[language]}
 						skills={skills.backend}
 						icon={<Server className='w-6 h-6' />}
 					/>
 					<SkillCard
-						title='Development Tools'
+						title={SKILLS.TOOLS[language]}
 						skills={skills.tools}
 						icon={<Code className='w-6 h-6' />}
 					/>
 					<SkillCard
-						title='Soft Skills'
+						title={SKILLS.SOFT_SKILLS[language]}
 						skills={skills.soft}
 						icon={<Database className='w-6 h-6' />}
 					/>

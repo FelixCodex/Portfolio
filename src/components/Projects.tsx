@@ -3,12 +3,17 @@ import localproductyflowImg from '../localproductyflow.webp';
 import kronoImg from '../krono.webp';
 import easepass from '../easepassword.webp';
 import javier from '../javier-david.webp';
+import { useLanguage } from '../hooks/useLanguage';
+import { PROJECTS } from '../const';
 
 const projects = [
 	{
-		title: 'Artist Store',
-		subtitle: 'E-Commerce',
-		description: 'An E-Commerce to sell the 3d models of the artist',
+		title: { en: 'Artist Store', es: 'Tienda de artista' },
+		subtitle: { en: 'E-Commerce', es: 'Tienda Virtual' },
+		description: {
+			en: 'An E-Commerce to sell the 3d models of the artist',
+			es: 'Una tienda virtual para vender los modelos 3d del artista',
+		},
 		image: javier,
 		tags: ['React', 'Node.js', 'Express', 'SQLite'],
 		hidden: false,
@@ -16,9 +21,12 @@ const projects = [
 		githubUrl: 'https://github.com/FelixCodex/j-ecommerce-client',
 	},
 	{
-		title: 'EasePassword',
-		subtitle: 'Password Generator',
-		description: 'Fast and simple password generator to secure your accounts',
+		title: { en: 'EasePassword', es: 'EasePassword' },
+		subtitle: { en: 'Password Generator', es: 'Generador de contraseñas' },
+		description: {
+			en: 'Fast and simple password generator to secure your accounts',
+			es: 'Rapida y simple generador de contraseñas para asegurar tus cuentas',
+		},
 		image: easepass,
 		tags: ['Javascript', 'React', 'Tailwind'],
 		hidden: false,
@@ -26,9 +34,15 @@ const projects = [
 		githubUrl: 'https://github.com/FelixCodex/EasePassword',
 	},
 	{
-		title: 'Local ProductyFlow',
-		subtitle: 'Task Management App',
-		description: 'This is the local version without server of ProductyFlow.',
+		title: { en: 'Local ProductyFlow', es: 'Local ProductyFlow' },
+		subtitle: {
+			en: 'Task Management App',
+			es: 'Aplicación de gestión de tareas',
+		},
+		description: {
+			en: 'This is the local version without server of ProductyFlow',
+			es: 'Esta es la versión local sin servidor de ProductyFlow',
+		},
 		image: localproductyflowImg,
 		tags: ['HTML5', 'CSS3', 'Javascript'],
 		hidde: false,
@@ -36,19 +50,27 @@ const projects = [
 		githubUrl: 'https://github.com/FelixCodex/LocalProductyFlow',
 	},
 	{
-		title: 'ProductyFlow',
-		subtitle: 'Task Management App',
-		description:
-			'A collaborative task management application with real-time updates and team features.',
+		title: { en: 'ProductyFlow', es: 'ProductyFlow' },
+		subtitle: {
+			en: 'Task Management App',
+			es: 'Aplicación de gestión de tareas',
+		},
+		description: {
+			en: 'A collaborative task management application with real-time updates and team features',
+			es: 'Una aplicación de gestión de tareas colaborativo con actualizaciónes en tiempo real y herramientas de equipo',
+		},
 		image: localproductyflowImg,
 		tags: ['Javascript', 'Spring Boot', 'MySQL'],
 		hidden: false,
 		githubUrl: 'https://github.com/FelixCodex/ProductyFlow',
 	},
 	{
-		title: 'Krono',
-		subtitle: 'Cronometer',
-		description: 'A simple cronometer to keep track of your work hours',
+		title: { en: 'Krono', es: 'Krono' },
+		subtitle: { en: 'Cronometer', es: 'Cronometer' },
+		description: {
+			en: 'A simple cronometer to keep track of your work hours',
+			es: 'Un Cronometro para mantener un seguimiento de tus horas de trabajo',
+		},
 		image: kronoImg,
 		tags: ['Javascript', 'React', 'Tailwind'],
 		hidden: false,
@@ -58,6 +80,7 @@ const projects = [
 ];
 
 export function Projects() {
+	const { language } = useLanguage();
 	return (
 		<section
 			id='projects'
@@ -65,14 +88,15 @@ export function Projects() {
 		>
 			<div className='container mx-auto px-4'>
 				<h2 className='text-3xl font-bold text-center mb-12'>
-					Featured Projects
+					{PROJECTS.TITLE[language]}
 				</h2>
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 					{projects.map(project => {
+						const title = project.title[language];
 						if (project.hidden) return;
 						return (
 							<ProjectCard
-								key={project.title}
+								key={title}
 								{...project}
 							/>
 						);
@@ -92,25 +116,26 @@ function ProjectCard({
 	liveUrl,
 	githubUrl,
 }: {
-	title: string;
-	subtitle: string;
-	description: string;
+	title: { en: string; es: string };
+	subtitle: { en: string; es: string };
+	description: { en: string; es: string };
 	image: string;
 	tags: string[];
 	liveUrl?: string;
 	githubUrl: string;
 }) {
+	const { language } = useLanguage();
 	return (
 		<div className='bg-white rounded-lg shadow-lg overflow-hidden hover:scale-[102%] transition-transform'>
 			<img
 				src={image}
-				alt={title}
+				alt={title[language]}
 				className='w-full h-48 object-cover'
 			/>
 			<div className='p-6'>
-				<h3 className='text-xl font-semibold mb-2'>{title}</h3>
-				<p className='text-gray-600 mb-4'>{subtitle}</p>
-				<p className='text-gray-600 mb-4'>{description}</p>
+				<h3 className='text-xl font-semibold mb-2'>{title[language]}</h3>
+				<p className='text-gray-600 mb-4'>{subtitle[language]}</p>
+				<p className='text-gray-600 mb-4'>{description[language]}</p>
 				<div className='flex flex-wrap gap-2 mb-4'>
 					{tags.map(tag => (
 						<span
@@ -130,7 +155,8 @@ function ProjectCard({
 							className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
 						>
 							<ExternalLink className='w-4 h-4' />
-							Live Demo
+
+							{PROJECTS.LINK[language]}
 						</a>
 					)}
 					<a
@@ -140,7 +166,7 @@ function ProjectCard({
 						className='flex items-center gap-2 text-gray-700 hover:text-gray-900'
 					>
 						<Github className='w-4 h-4' />
-						Code
+						{PROJECTS.CODE[language]}
 					</a>
 				</div>
 			</div>
