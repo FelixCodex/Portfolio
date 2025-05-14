@@ -5,7 +5,7 @@ import { HERO } from '../const';
 export function Hero() {
 	const { language } = useLanguage();
 	return (
-		<section className='bg-gradient-to-b from-gray-900 to-gray-800 text-white py-20'>
+		<section className='bg-gradient-to-b from-gray-900 mt-20 to-gray-800 text-white py-20'>
 			<div className='container mx-auto px-4'>
 				<div className='max-w-3xl'>
 					<h1 className='text-5xl font-bold mb-6'>{HERO.TITLE[language]}</h1>

@@ -1,10 +1,10 @@
-import { ExternalLink, Github } from 'lucide-react';
-import localproductyflowImg from '../localproductyflow.webp';
-import kronoImg from '../krono.webp';
-import easepass from '../easepassword.webp';
+import { CheckCircle2, ExternalLink, Github } from 'lucide-react';
 import javier from '../javier-david.webp';
 import { useLanguage } from '../hooks/useLanguage';
 import { PROJECTS } from '../const';
+import { ReactNode } from 'react';
+import { SandClock } from './elements/SandClock';
+import { Key } from './elements/Key';
 
 const projects = [
 	{
@@ -20,16 +20,70 @@ const projects = [
 		liveUrl: 'https://javier-david.com',
 		githubUrl: 'https://github.com/FelixCodex/j-ecommerce-client',
 	},
+	// {
+	// 	title: { en: 'EasePassword', es: 'EasePassword' },
+	// 	subtitle: { en: 'Password Generator', es: 'Generador de contraseñas' },
+	// 	description: {
+	// 		en: 'Fast and simple password generator to secure your accounts',
+	// 		es: 'Rapida y simple generador de contraseñas para asegurar tus cuentas',
+	// 	},
+	// 	image: easepass,
+	// 	tags: ['Javascript', 'React', 'Tailwind'],
+	// 	hidden: false,
+	// 	liveUrl: 'https://easepassword.pages.dev/',
+	// 	githubUrl: 'https://github.com/FelixCodex/EasePassword',
+	// },
+	// {
+	// 	title: { en: 'Local ProductyFlow', es: 'Local ProductyFlow' },
+	// 	subtitle: {
+	// 		en: 'Task Management App',
+	// 		es: 'Aplicación de gestión de tareas',
+	// 	},
+	// 	description: {
+	// 		en: 'This is the local version without server of ProductyFlow',
+	// 		es: 'Esta es la versión local sin servidor de ProductyFlow',
+	// 	},
+	// 	image: localproductyflowImg,
+	// 	tags: ['HTML5', 'CSS3', 'Javascript'],
+	// 	hidde: false,
+	// 	liveUrl: 'https://localproductyflow.pages.dev/',
+	// 	githubUrl: 'https://github.com/FelixCodex/LocalProductyFlow',
+	// },
+	// {
+	// 	title: { en: 'ProductyFlow', es: 'ProductyFlow' },
+	// 	subtitle: {
+	// 		en: 'Task Management App',
+	// 		es: 'Aplicación de gestión de tareas',
+	// 	},
+	// 	description: {
+	// 		en: 'A collaborative task management application with real-time updates and team features',
+	// 		es: 'Una aplicación de gestión de tareas colaborativo con actualizaciónes en tiempo real y herramientas de equipo',
+	// 	},
+	// 	image: localproductyflowImg,
+	// 	tags: ['Javascript', 'Spring Boot', 'MySQL'],
+	// 	hidden: false,
+	// 	githubUrl: 'https://github.com/FelixCodex/ProductyFlow',
+	// },
+	// {
+	// 	title: { en: 'Krono', es: 'Krono' },
+	// 	subtitle: { en: 'Cronometer', es: 'Cronometer' },
+	// 	description: {
+	// 		en: 'A simple cronometer to keep track of your work hours',
+	// 		es: 'Un Cronometro para mantener un seguimiento de tus horas de trabajo',
+	// 	},
+	// 	image: kronoImg,
+	// 	tags: ['Javascript', 'React', 'Tailwind'],
+	// 	hidden: false,
+	// 	liveUrl: 'https://krono.pages.dev/',
+	// 	githubUrl: 'https://github.com/FelixCodex/Krono',
+	// },
+];
+
+const small_projects = [
 	{
 		title: { en: 'EasePassword', es: 'EasePassword' },
 		subtitle: { en: 'Password Generator', es: 'Generador de contraseñas' },
-		description: {
-			en: 'Fast and simple password generator to secure your accounts',
-			es: 'Rapida y simple generador de contraseñas para asegurar tus cuentas',
-		},
-		image: easepass,
-		tags: ['Javascript', 'React', 'Tailwind'],
-		hidden: false,
+		icon: <Key className='text-blue-500 h-6 w-6' />,
 		liveUrl: 'https://easepassword.pages.dev/',
 		githubUrl: 'https://github.com/FelixCodex/EasePassword',
 	},
@@ -39,13 +93,7 @@ const projects = [
 			en: 'Task Management App',
 			es: 'Aplicación de gestión de tareas',
 		},
-		description: {
-			en: 'This is the local version without server of ProductyFlow',
-			es: 'Esta es la versión local sin servidor de ProductyFlow',
-		},
-		image: localproductyflowImg,
-		tags: ['HTML5', 'CSS3', 'Javascript'],
-		hidde: false,
+		icon: <CheckCircle2 className='text-[#4f46e5] h-6 w-6' />,
 		liveUrl: 'https://localproductyflow.pages.dev/',
 		githubUrl: 'https://github.com/FelixCodex/LocalProductyFlow',
 	},
@@ -55,25 +103,13 @@ const projects = [
 			en: 'Task Management App',
 			es: 'Aplicación de gestión de tareas',
 		},
-		description: {
-			en: 'A collaborative task management application with real-time updates and team features',
-			es: 'Una aplicación de gestión de tareas colaborativo con actualizaciónes en tiempo real y herramientas de equipo',
-		},
-		image: localproductyflowImg,
-		tags: ['Javascript', 'Spring Boot', 'MySQL'],
-		hidden: false,
+		icon: <CheckCircle2 className='text-[#4f46e5] h-6 w-6' />,
 		githubUrl: 'https://github.com/FelixCodex/ProductyFlow',
 	},
 	{
 		title: { en: 'Krono', es: 'Krono' },
 		subtitle: { en: 'Cronometer', es: 'Cronometer' },
-		description: {
-			en: 'A simple cronometer to keep track of your work hours',
-			es: 'Un Cronometro para mantener un seguimiento de tus horas de trabajo',
-		},
-		image: kronoImg,
-		tags: ['Javascript', 'React', 'Tailwind'],
-		hidden: false,
+		icon: <SandClock className='text-blue-500 h-6 w-6' />,
 		liveUrl: 'https://krono.pages.dev/',
 		githubUrl: 'https://github.com/FelixCodex/Krono',
 	},
@@ -86,8 +122,8 @@ export function Projects() {
 			id='projects'
 			className='py-20 bg-white'
 		>
-			<div className='container mx-auto px-4'>
-				<h2 className='text-3xl font-bold text-center mb-12'>
+			<div className='container mx-auto px-4 flex flex-col gap-12'>
+				<h2 className='text-3xl font-bold text-center'>
 					{PROJECTS.TITLE[language]}
 				</h2>
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -102,8 +138,57 @@ export function Projects() {
 						);
 					})}
 				</div>
+				<div className='w-full h-fit p-4 rounded-xl gap-4 flex flex-col items-center justify-center'>
+					<h2 className='text-xl font-medium text-center'>Other Projects</h2>
+					<div className='flex flex-wrap justify-center gap-3'>
+						{small_projects.map(project => {
+							const title = project.title[language];
+							return (
+								<SimpleProjectCard
+									text={title}
+									icon={project.icon}
+									link={project.liveUrl}
+									github={project.githubUrl}
+								></SimpleProjectCard>
+							);
+						})}
+					</div>
+				</div>
 			</div>
 		</section>
+	);
+}
+
+function SimpleProjectCard({
+	icon,
+	text,
+	link,
+	github,
+}: {
+	icon: ReactNode;
+	text: string;
+	link: string | undefined;
+	github: string;
+}) {
+	return (
+		<div
+			className={`p-1 px-2 hover:scale-[102%] transition-transform cursor-pointer select-none border-2 border-gray-300 rounded-lg shadow-md`}
+			onClick={() => {
+				location.href = link ? link : github;
+			}}
+		>
+			<p className='flex gap-4 items-center'>
+				{icon}
+				<span className='-ml-2 text-lg font-medium'>{text}</span>
+				<Github
+					className='w-9 h-9 hover:scale-[108%] transition-[transform,background-color] rounded-full hover:bg-gray-200 p-[0.40rem]'
+					onClick={e => {
+						e.stopPropagation();
+						location.href = github;
+					}}
+				/>
+			</p>
+		</div>
 	);
 }
 

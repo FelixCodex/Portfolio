@@ -33,7 +33,7 @@ export function Header() {
 	};
 
 	return (
-		<header className='bg-gray-900 text-white h-20 flex items-center'>
+		<header className='bg-gray-900 text-white h-20 fixed z-50 top-0 w-full items-center'>
 			<div className='container mx-auto h-full'>
 				<nav className='flex justify-between px-4 relative z-10 bg-gray-900 items-center h-full'>
 					<div className='flex items-center gap-2 name-logo'>
