@@ -9,8 +9,8 @@ export const HERO = {
 		en: 'Frontend Developer with a Passion for Creating Amazing Web Experiences',
 	},
 	DESCRIPTION: {
-		es: 'Hola, soy José Félix. Con 2 años de experiencia en desarrollo web, me especializo en crear aplicaciones responsivas e intuitivas con tecnologías modernas.',
-		en: "Hi, I'm Jose Felix. With 2 years of experience in web development, I specialize in building responsive and user-friendly applications using modern technologies.",
+		es: 'Hola, soy José Felix. Con 2 años de experiencia en desarrollo web, me especializo en crear aplicaciones responsivas e intuitivas con tecnologías modernas.',
+		en: "Hi, I'm José Felix. With 2 years of experience in web development, I specialize in building responsive and user-friendly applications using modern technologies.",
 	},
 	VIEW: { es: 'Ver mi trabajo', en: 'View my work' },
 	CV: { es: 'Descargar CV', en: 'Download CV' },
