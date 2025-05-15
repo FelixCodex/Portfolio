@@ -172,7 +172,7 @@ function SimpleProjectCard({
 }) {
 	return (
 		<div
-			className={`p-1 px-2 hover:scale-[102%] transition-transform cursor-pointer select-none border-2 border-gray-300 rounded-lg shadow-md`}
+			className={`p-1 px-2 hover:scale-[102%] transition-transform cursor-pointer select-none border-2 border-gray-500 rounded-lg shadow-md`}
 			onClick={() => {
 				location.href = link ? link : github;
 			}}
