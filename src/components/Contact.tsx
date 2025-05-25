@@ -1,4 +1,3 @@
-import React from 'react';
 import { Facebook, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { CONTACT } from '../const';
@@ -98,4 +97,21 @@ export function Contact() {
 			</div>
 		</section>
 	);
+}
+
+{
+	/* <div
+	className='absolute -top-5 left-4 w-fit h-fit border backdrop-blur-md flex items-center justify-between gap-4 px-6 py-4 rounded-full transition-all duration-300 cursor-pointer group'
+	style={{
+		backgroundColor: 'rgba(255, 255, 255, 0.15)',
+		borderColor: 'rgba(255, 255, 255, 0.2)',
+		boxShadow:
+			'0 8px 32px rgba(0, 0, 0, 0.1), inset 0 0 15px 0px rgba(255, 255, 255, 0.2)',
+	}}
+>
+	<p className='text-gray-700 text-lg font-medium'>
+		What are we working on today?
+	</p>
+	<ChevronRight className='text-gray-700 h-7 w-7 transition-transform duration-200 group-hover:translate-x-1' />
+</div>; */
 }

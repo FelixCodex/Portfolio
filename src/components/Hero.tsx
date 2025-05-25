@@ -13,19 +13,11 @@ export function Hero() {
 						{HERO.DESCRIPTION[language]}
 					</p>
 					<div className='flex items-center justify-start gap-3'>
-						<a
-							href='#projects'
-							className='inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors'
-						>
-							{HERO.VIEW[language]}
-							<ArrowRight className='w-5 h-5 rotate-90' />
-						</a>
-
 						{language == 'es' ? (
 							<a
 								href='/src/ResumeCV-es.pdf'
 								download='JoséFelixCV.pdf'
-								className='inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-300 text-blue-700 px-6 py-3 rounded-lg transition-colors'
+								className='inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors'
 							>
 								{HERO.CV[language]}
 								<File className='w-5 h-5' />
@@ -34,12 +26,20 @@ export function Hero() {
 							<a
 								href='/src/ResumeCV-en.pdf'
 								download='JoséFelixCV.pdf'
-								className='inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-300 text-blue-700 px-6 py-3 rounded-lg transition-colors'
+								className='inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors'
 							>
 								{HERO.CV[language]}
 								<File className='w-5 h-5' />
 							</a>
 						)}
+
+						<a
+							href='#projects'
+							className='inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-300 text-blue-700 px-6 py-3 rounded-lg transition-colors'
+						>
+							{HERO.VIEW[language]}
+							<ArrowRight className='w-5 h-5 rotate-90' />
+						</a>
 					</div>
 				</div>
 			</div>

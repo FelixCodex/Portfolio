@@ -172,7 +172,7 @@ function SimpleProjectCard({
 }) {
 	return (
 		<div
-			className={`p-1 px-2 hover:scale-[102%] transition-transform cursor-pointer select-none border-2 border-gray-500 rounded-lg shadow-md`}
+			className={`p-1 px-2 hover:scale-[102%] transition-[transform,box-shadow] cursor-pointer select-none hover:shadow-lg hover:shadow-blue-200 border border-gray-500 rounded-lg shadow-md`}
 			onClick={() => {
 				location.href = link ? link : github;
 			}}
@@ -211,7 +211,7 @@ function ProjectCard({
 }) {
 	const { language } = useLanguage();
 	return (
-		<div className='bg-white rounded-lg shadow-lg overflow-hidden hover:scale-[102%] transition-transform'>
+		<div className='bg-white rounded-lg shadow-lg overflow-hidden hover:scale-[102%] hover:shadow-xl hover:shadow-blue-200 duration-300 transition-[transform,box-shadow]'>
 			<img
 				src={image}
 				alt={title[language]}

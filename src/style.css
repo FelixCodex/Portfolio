@@ -15,6 +15,11 @@
 	z-index: 100;
 }
 
+.shadow-test {
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+		inset 0 0 15px 0px rgba(255, 255, 255, 0.2);
+}
+
 .shadow-es {
 	box-shadow: 0px -8px 12px -2px #ff1100d7, 0px 5px 12px 0px #ff1100d7,
 		5px 0px 10px 0px #eeff00, -5px 0px 10px 0px #eeff00;
