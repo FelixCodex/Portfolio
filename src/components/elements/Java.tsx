@@ -10,11 +10,11 @@ export function Java({ className }: { className?: string }) {
 			className={className}
 		>
 			<path
-				fill='#d43a02'
+				fill='#f58219'
 				d='M23.65,24.898c-0.998-1.609-1.722-2.943-2.725-5.455C19.229,15.2,31.24,11.366,26.37,3.999	c2.111,5.089-7.577,8.235-8.477,12.473C17.07,20.37,23.645,24.898,23.65,24.898z'
 			></path>
 			<path
-				fill='#d43a02'
+				fill='#f58219'
 				d='M23.878,17.27c-0.192,2.516,2.229,3.857,2.299,5.695c0.056,1.496-1.447,2.743-1.447,2.743	s2.728-0.536,3.579-2.818c0.945-2.534-1.834-4.269-1.548-6.298c0.267-1.938,6.031-5.543,6.031-5.543S24.311,11.611,23.878,17.27z'
 			></path>
 			<linearGradient
@@ -27,11 +27,11 @@ export function Java({ className }: { className?: string }) {
 			>
 				<stop
 					offset='0'
-					stop-color='#5c65d6'
+					stop-color='#4e7896'
 				></stop>
 				<stop
 					offset='.999'
-					stop-color='#464eb0'
+					stop-color='#4e7896'
 				></stop>
 			</linearGradient>
 			<path
@@ -48,11 +48,11 @@ export function Java({ className }: { className?: string }) {
 			>
 				<stop
 					offset='0'
-					stop-color='#5c65d6'
+					stop-color='#4e7896'
 				></stop>
 				<stop
 					offset='.999'
-					stop-color='#464eb0'
+					stop-color='#4e7896'
 				></stop>
 			</linearGradient>
 			<path
@@ -69,11 +69,11 @@ export function Java({ className }: { className?: string }) {
 			>
 				<stop
 					offset='0'
-					stop-color='#5c65d6'
+					stop-color='#4e7896'
 				></stop>
 				<stop
 					offset='.999'
-					stop-color='#464eb0'
+					stop-color='#4e7896'
 				></stop>
 			</linearGradient>
 			<path
@@ -90,11 +90,11 @@ export function Java({ className }: { className?: string }) {
 			>
 				<stop
 					offset='0'
-					stop-color='#5c65d6'
+					stop-color='#4e7896'
 				></stop>
 				<stop
 					offset='.999'
-					stop-color='#464eb0'
+					stop-color='#4e7896'
 				></stop>
 			</linearGradient>
 			<path
@@ -111,11 +111,11 @@ export function Java({ className }: { className?: string }) {
 			>
 				<stop
 					offset='0'
-					stop-color='#5c65d6'
+					stop-color='#4e7896'
 				></stop>
 				<stop
 					offset='.999'
-					stop-color='#464eb0'
+					stop-color='#4e7896'
 				></stop>
 			</linearGradient>
 			<path

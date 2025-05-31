@@ -16,7 +16,7 @@ export function Toggle({ checked, onChange, className }: ToggleProps) {
 			></span>
 			<button
 				type='button'
-				className={`bg-gray-800 relative p-[0.10rem] inline-flex h-[1.90rem] w-[3.40rem] flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out`}
+				className={`bg-gray-800 relative p-[0.10rem] pt-[0.09rem] inline-flex h-[1.90rem] w-[3.40rem] flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out`}
 				role='switch'
 				aria-checked={checked}
 				onClick={() => onChange(!checked)}

@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.shadow-nm {
+		box-shadow: 0 0px 15px -3px #51a5ff, 0 0px 6px -4px #51a5ff;
+	}
+
+	.shadow-hm {
+		box-shadow: 0 0px 24px 3px #51a5ff, 0 0px 10px -2px #51a5ff;
+	}
+
+	.bg-gradient-nm {
+		background-image: linear-gradient(90deg, #007bff, #007bff, #007bff);
+	}
+
+	.bg-gradient-nm::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: linear-gradient(90deg, #00a2ff, #007bff, #007bff);
+		background-size: cover;
+		transition: opacity 0.2s ease-in-out;
+		opacity: 1;
+		z-index: 5;
+	}
+
+	.bg-gradient-nm:hover::after {
+		opacity: 0;
+	}
+}

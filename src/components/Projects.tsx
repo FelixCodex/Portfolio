@@ -1,10 +1,23 @@
-import { CheckCircle2, ExternalLink, Github } from 'lucide-react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import {
+	CheckCircle2,
+	Circle,
+	ExternalLink,
+	Github,
+	LockIcon,
+} from 'lucide-react';
 import javier from '../javier-david.webp';
+import easepass from '../easepassword.webp';
 import { useLanguage } from '../hooks/useLanguage';
 import { PROJECTS } from '../const';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import { SandClock } from './elements/SandClock';
 import { Key } from './elements/Key';
+import { HTML5 } from './elements/HTML5';
+import { CSS3 } from './elements/CSS3';
+import { Javascript } from './elements/Javascript';
+import { Typescript } from './elements/Typescript';
+import { ReactIcon } from './elements/React';
 
 const projects = [
 	{
@@ -20,72 +33,15 @@ const projects = [
 		liveUrl: 'https://javier-david.com',
 		githubUrl: 'https://github.com/FelixCodex/j-ecommerce-client',
 	},
-	// {
-	// 	title: { en: 'EasePassword', es: 'EasePassword' },
-	// 	subtitle: { en: 'Password Generator', es: 'Generador de contraseñas' },
-	// 	description: {
-	// 		en: 'Fast and simple password generator to secure your accounts',
-	// 		es: 'Rapida y simple generador de contraseñas para asegurar tus cuentas',
-	// 	},
-	// 	image: easepass,
-	// 	tags: ['Javascript', 'React', 'Tailwind'],
-	// 	hidden: false,
-	// 	liveUrl: 'https://easepassword.pages.dev/',
-	// 	githubUrl: 'https://github.com/FelixCodex/EasePassword',
-	// },
-	// {
-	// 	title: { en: 'Local ProductyFlow', es: 'Local ProductyFlow' },
-	// 	subtitle: {
-	// 		en: 'Task Management App',
-	// 		es: 'Aplicación de gestión de tareas',
-	// 	},
-	// 	description: {
-	// 		en: 'This is the local version without server of ProductyFlow',
-	// 		es: 'Esta es la versión local sin servidor de ProductyFlow',
-	// 	},
-	// 	image: localproductyflowImg,
-	// 	tags: ['HTML5', 'CSS3', 'Javascript'],
-	// 	hidde: false,
-	// 	liveUrl: 'https://localproductyflow.pages.dev/',
-	// 	githubUrl: 'https://github.com/FelixCodex/LocalProductyFlow',
-	// },
-	// {
-	// 	title: { en: 'ProductyFlow', es: 'ProductyFlow' },
-	// 	subtitle: {
-	// 		en: 'Task Management App',
-	// 		es: 'Aplicación de gestión de tareas',
-	// 	},
-	// 	description: {
-	// 		en: 'A collaborative task management application with real-time updates and team features',
-	// 		es: 'Una aplicación de gestión de tareas colaborativo con actualizaciónes en tiempo real y herramientas de equipo',
-	// 	},
-	// 	image: localproductyflowImg,
-	// 	tags: ['Javascript', 'Spring Boot', 'MySQL'],
-	// 	hidden: false,
-	// 	githubUrl: 'https://github.com/FelixCodex/ProductyFlow',
-	// },
-	// {
-	// 	title: { en: 'Krono', es: 'Krono' },
-	// 	subtitle: { en: 'Cronometer', es: 'Cronometer' },
-	// 	description: {
-	// 		en: 'A simple cronometer to keep track of your work hours',
-	// 		es: 'Un Cronometro para mantener un seguimiento de tus horas de trabajo',
-	// 	},
-	// 	image: kronoImg,
-	// 	tags: ['Javascript', 'React', 'Tailwind'],
-	// 	hidden: false,
-	// 	liveUrl: 'https://krono.pages.dev/',
-	// 	githubUrl: 'https://github.com/FelixCodex/Krono',
-	// },
 ];
 
 const small_projects = [
 	{
 		title: { en: 'EasePassword', es: 'EasePassword' },
 		subtitle: { en: 'Password Generator', es: 'Generador de contraseñas' },
-		icon: <Key className='text-blue-500 h-6 w-6' />,
-		liveUrl: 'https://easepassword.pages.dev/',
-		githubUrl: 'https://github.com/FelixCodex/EasePassword',
+		icon: <Key className='text-blue-500 h-5 w-5' />,
+		link: 'https://easepassword.pages.dev/',
+		github: 'https://github.com/FelixCodex/EasePassword',
 	},
 	{
 		title: { en: 'Local ProductyFlow', es: 'Local ProductyFlow' },
@@ -93,9 +49,9 @@ const small_projects = [
 			en: 'Task Management App',
 			es: 'Aplicación de gestión de tareas',
 		},
-		icon: <CheckCircle2 className='text-[#4f46e5] h-6 w-6' />,
-		liveUrl: 'https://localproductyflow.pages.dev/',
-		githubUrl: 'https://github.com/FelixCodex/LocalProductyFlow',
+		icon: <CheckCircle2 className='text-[#4f46e5] h-5 w-5' />,
+		link: 'https://localproductyflow.pages.dev/',
+		github: 'https://github.com/FelixCodex/LocalProductyFlow',
 	},
 	{
 		title: { en: 'ProductyFlow', es: 'ProductyFlow' },
@@ -103,15 +59,15 @@ const small_projects = [
 			en: 'Task Management App',
 			es: 'Aplicación de gestión de tareas',
 		},
-		icon: <CheckCircle2 className='text-[#4f46e5] h-6 w-6' />,
-		githubUrl: 'https://github.com/FelixCodex/ProductyFlow',
+		icon: <CheckCircle2 className='text-[#4f46e5] h-5 w-5' />,
+		github: 'https://github.com/FelixCodex/ProductyFlow',
 	},
 	{
 		title: { en: 'Krono', es: 'Krono' },
 		subtitle: { en: 'Cronometer', es: 'Cronometer' },
-		icon: <SandClock className='text-blue-500 h-6 w-6' />,
-		liveUrl: 'https://krono.pages.dev/',
-		githubUrl: 'https://github.com/FelixCodex/Krono',
+		icon: <SandClock className='text-blue-500 h-5 w-5' />,
+		link: 'https://krono.pages.dev/',
+		github: 'https://github.com/FelixCodex/Krono',
 	},
 ];
 
@@ -120,13 +76,13 @@ export function Projects() {
 	return (
 		<section
 			id='projects'
-			className='py-20 bg-white'
+			className='pb-20 pt-28 bg-gradient-to-b min-h-[100dvh] h-fit from-[--bg_pri] to-[#F5F7FA]'
 		>
-			<div className='container mx-auto px-4 flex flex-col gap-12'>
-				<h2 className='text-3xl font-bold text-center'>
+			<div className='sect-container mx-auto px-4 flex flex-col gap-28'>
+				<h2 className='text-5xl text-gray-900 font-bold text-center'>
 					{PROJECTS.TITLE[language]}
 				</h2>
-				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+				<div className='flex flex-col gap-8 items-center'>
 					{projects.map(project => {
 						const title = project.title[language];
 						if (project.hidden) return;
@@ -138,17 +94,18 @@ export function Projects() {
 						);
 					})}
 				</div>
-				<div className='w-full h-fit p-4 rounded-xl gap-4 flex flex-col items-center justify-center'>
-					<h2 className='text-xl font-medium text-center'>Other Projects</h2>
-					<div className='flex flex-wrap justify-center gap-3'>
+				<div className='relative w-full h-fit p-4 pt-6 gap-7 flex flex-col items-center justify-center'>
+					<div className='absolute top-0 h-[.0625rem] w-[90%] bg-gradient-to-r from-transparent via-gray-300 to-transparent' />
+					<h2 className='text-2xl text-gray-700 font-medium text-center'>
+						{PROJECTS.OTHER[language]}
+					</h2>
+					<div className='flex flex-wrap justify-center gap-4'>
 						{small_projects.map(project => {
 							const title = project.title[language];
 							return (
 								<SimpleProjectCard
-									text={title}
-									icon={project.icon}
-									link={project.liveUrl}
-									github={project.githubUrl}
+									key={title}
+									{...project}
 								></SimpleProjectCard>
 							);
 						})}
@@ -161,40 +118,65 @@ export function Projects() {
 
 function SimpleProjectCard({
 	icon,
-	text,
+	title,
+	subtitle,
 	link,
 	github,
 }: {
 	icon: ReactNode;
-	text: string;
-	link: string | undefined;
+	title: { en: string; es: string };
+	subtitle: { en: string; es: string };
+	link?: string | undefined;
 	github: string;
 }) {
+	const { language } = useLanguage();
 	return (
 		<div
-			className={`p-1 px-2 hover:scale-[102%] transition-[transform,box-shadow] cursor-pointer select-none hover:shadow-lg hover:shadow-blue-200 border border-gray-500 rounded-lg shadow-md`}
+			className={`p-2 px-3 hover:scale-[102%] group flex items-center gap-5 transition-[transform,box-shadow] cursor-pointer select-none bg-white/60 hover:shadow-lg hover:shadow-blue-200 border border-gray-200 rounded-lg shadow-sm`}
 			onClick={() => {
 				location.href = link ? link : github;
 			}}
 		>
-			<p className='flex gap-4 items-center'>
-				{icon}
-				<span className='-ml-2 text-lg font-medium'>{text}</span>
-				<Github
-					className='w-9 h-9 hover:scale-[108%] transition-[transform,background-color] rounded-full hover:bg-gray-200 p-[0.40rem]'
-					onClick={e => {
-						e.stopPropagation();
-						location.href = github;
-					}}
-				/>
-			</p>
+			<div className='flex flex-col'>
+				<p className='flex gap-4 items-center'>
+					{icon}
+					<span className='-ml-2 text-lg text-gray-700 group-hover:text-gray-800 transition-colors font-medium'>
+						{title[language]}
+					</span>
+				</p>
+				<p className='text-gray-400 group-hover:text-gray-500 transition-colors'>
+					{subtitle[language]}
+				</p>
+			</div>
+			<div className='flex gap-2 border border-gray-200 rounded-xl p-2'>
+				{link && (
+					<a
+						href={link}
+						target='_blank'
+						rel='noopener noreferrer'
+						className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
+					>
+						<ExternalLink className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
+					</a>
+				)}
+				<a
+					href={github}
+					target='_blank'
+					rel='noopener noreferrer'
+					className='flex items-center gap-2 text-gray-700 hover:text-gray-900'
+				>
+					<Github className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
+				</a>
+			</div>
 		</div>
 	);
 }
 
+const iClass =
+	'w-7 h-7 md:h-14 md:w-14 drop-shadow-lg drop-shadow-[0_4px_6px_rgba(59,130,246,0.3)]';
+
 function ProjectCard({
 	title,
-	subtitle,
 	description,
 	image,
 	tags,
@@ -210,28 +192,32 @@ function ProjectCard({
 	githubUrl: string;
 }) {
 	const { language } = useLanguage();
+
 	return (
-		<div className='bg-white rounded-lg shadow-lg overflow-hidden hover:scale-[102%] hover:shadow-xl hover:shadow-blue-200 duration-300 transition-[transform,box-shadow]'>
-			<img
-				src={image}
-				alt={title[language]}
-				className='w-full h-48 object-cover'
-			/>
-			<div className='p-6'>
-				<h3 className='text-xl font-semibold mb-2'>{title[language]}</h3>
-				<p className='text-gray-600 mb-4'>{subtitle[language]}</p>
-				<p className='text-gray-600 mb-4'>{description[language]}</p>
-				<div className='flex flex-wrap gap-2 mb-4'>
-					{tags.map(tag => (
-						<span
-							key={tag}
-							className='px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm'
-						>
-							{tag}
-						</span>
-					))}
+		<div className='relative overflow-hidden w-[90%] group rounded-2xl hover:scale-[101%] transition-transform max-h-[40rem] h-fit p-4 shadow-sm bg-white/60 border border-gray-300'>
+			<div className='w-full flex items-center justify-start md:justify-center mb-4'>
+				<div className='absolute top-[.76rem] left-4 pt-[.625rem] md:flex items-center justify-center gap-2 hidden'>
+					<Circle
+						className='w-3 h-3 hover:scale-125 transition-[transform,color]'
+						fill='#4b5563'
+						stroke='#4b5563 '
+					></Circle>
+					<Circle
+						className='w-3 h-3 hover:scale-125 transition-[transform,color]'
+						fill='#4b5563'
+						stroke='#4b5563 '
+					></Circle>
+					<Circle
+						className='w-3 h-3 hover:scale-125 transition-[transform,color]'
+						fill='#4b5563'
+						stroke='#4b5563 '
+					></Circle>
 				</div>
-				<div className='flex gap-4'>
+				<p className='flex items-center justify-center gap-2'>
+					<LockIcon className='text-gray-600 w-4 h-4 hover:scale-125 transition-[transform,color] hover:text-green-500'></LockIcon>
+					<span className='text-gray-800'>javier-david.com</span>
+				</p>
+				<div className='absolute top-[.45rem] right-4 flex items-center justify-center gap-3 p-2 px-3 border border-gray-200 rounded-xl'>
 					{liveUrl && (
 						<a
 							href={liveUrl}
@@ -239,9 +225,7 @@ function ProjectCard({
 							rel='noopener noreferrer'
 							className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
 						>
-							<ExternalLink className='w-4 h-4' />
-
-							{PROJECTS.LINK[language]}
+							<ExternalLink className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
 						</a>
 					)}
 					<a
@@ -250,11 +234,119 @@ function ProjectCard({
 						rel='noopener noreferrer'
 						className='flex items-center gap-2 text-gray-700 hover:text-gray-900'
 					>
-						<Github className='w-4 h-4' />
-						{PROJECTS.CODE[language]}
+						<Github className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
 					</a>
+				</div>
+			</div>
+			<div className='relative h-full flex flex-col gap-2'>
+				<img
+					src={image}
+					alt={title[language]}
+					className='w-full h-full border max-h-[33.125rem] border-gray-200 object-cover rounded-xl transition-[box-shadow]'
+				/>
+				<div
+					className={`md:absolute top-0 left-0 w-full flex flex-col-reverse gap-1 rounded-xl p-2 px-3 border border-gray-200 
+					md:flex-row items-start justify-between h-full md:p-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity`}
+				>
+					<div className='px-1 md:p-2 w-fit rounded-lg backdrop-blur-md bg-white/15 border border-white/20 md:shadow-sm flex items-center justify-center'>
+						<HTML5 className={iClass} />
+						<CSS3 className={iClass} />
+						<Javascript className={iClass} />
+						<Typescript className={iClass} />
+					</div>
+					<div className='rounded-lg w-fit backdrop-blur-md bg-white/15 border border-white/20 md:shadow-sm flex items-center justify-center px-1 md:p-3'>
+						<p>{description[language]}</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	);
 }
+
+// function ProjectCard({
+// 	title,
+// 	description,
+// 	image,
+// 	tags,
+// 	liveUrl,
+// 	githubUrl,
+// }: {
+// 	title: { en: string; es: string };
+// 	subtitle: { en: string; es: string };
+// 	description: { en: string; es: string };
+// 	image: string;
+// 	tags: string[];
+// 	liveUrl?: string;
+// 	githubUrl: string;
+// }) {
+// 	const { language } = useLanguage();
+
+// 	return (
+// 		<div className='relative overflow-hidden w-[90%] group rounded-xl hover:scale-[101%] transition-transform h-fit p-4 shadow-sm bg-white/60 border border-gray-200'>
+// 			<div className='w-full flex items-center justify-start md:justify-center mb-3'>
+// 				<div className='absolute top-[.56rem] left-4 pt-[.625rem] md:flex items-center justify-center gap-2 hidden'>
+// 					<Circle
+// 						className='w-4 h-4 hover:scale-125 transition-[transform,color]'
+// 						fill='#4b5563'
+// 						stroke='#4b5563 '
+// 					></Circle>
+// 					<Circle
+// 						className='w-4 h-4 hover:scale-125 transition-[transform,color]'
+// 						fill='#4b5563'
+// 						stroke='#4b5563 '
+// 					></Circle>
+// 					<Circle
+// 						className='w-4 h-4 hover:scale-125 transition-[transform,color]'
+// 						fill='#4b5563'
+// 						stroke='#4b5563 '
+// 					></Circle>
+// 				</div>
+// 				<p className='flex items-center justify-center gap-2'>
+// 					<LockIcon className='text-gray-600 w-4 h-4 hover:scale-125 transition-[transform,color] hover:text-green-500'></LockIcon>
+// 					<span className='text-gray-800'>javier-david.com</span>
+// 				</p>
+// 				<div className='absolute top-[.375rem] right-4 flex items-center justify-center gap-3 p-2 px-3 border border-gray-200 rounded-xl'>
+// 					{liveUrl && (
+// 						<a
+// 							href={liveUrl}
+// 							target='_blank'
+// 							rel='noopener noreferrer'
+// 							className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
+// 						>
+// 							<ExternalLink className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
+// 						</a>
+// 					)}
+// 					<a
+// 						href={githubUrl}
+// 						target='_blank'
+// 						rel='noopener noreferrer'
+// 						className='flex items-center gap-2 text-gray-700 hover:text-gray-900'
+// 					>
+// 						<Github className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
+// 					</a>
+// 				</div>
+// 			</div>
+// 			<div className='relative h-full flex flex-col gap-2'>
+// 				<img
+// 					src={image}
+// 					alt={title[language]}
+// 					className='w-full h-full border max-h-[33.125rem] border-gray-200 object-cover rounded-xl transition-[box-shadow]'
+// 				/>
+// 				<div
+// 					className={` top-0 left-0 w-full flex gap-1 rounded-xl p-2 px-3 border border-gray-200
+// 					 items-start justify-between h-full transition-opacity`}
+// 				>
+// 					<div className='px-1 md:p-2 w-fit rounded-lg backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center'>
+// 						<HTML5 className={iClass} />
+// 						<CSS3 className={iClass} />
+// 						<Javascript className={iClass} />
+// 						<Typescript className={iClass} />
+// 					</div>
+// 					<div className='rounded-lg w-fit backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center px-1 md:p-3'>
+// 						<p>{description[language]}</p>
+// 					</div>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	);
+// }
