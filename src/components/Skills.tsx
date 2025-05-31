@@ -15,7 +15,7 @@ import { CSS3 } from './elements/CSS3';
 import { ReactNode } from 'react';
 
 const iClass =
-	'min-h-14 min-w-14 w-14 h-14 md:min-h-20 md:min-w-20 shadow-md bg-white shadow-gray-200 border border-gray-300 rounded-xl p-2';
+	'min-h-14 min-w-14 w-14 h-14 md:min-h-20 md:min-w-20 shadow-md bg-white group-hover:scale-[110%] transition-transform shadow-gray-200 border border-gray-300 rounded-xl p-2';
 
 function SkillsSlideElementsWrapper({
 	element,
@@ -27,7 +27,7 @@ function SkillsSlideElementsWrapper({
 	return (
 		<div className='group relative'>
 			{element}
-			<span className='tooltiptext tooltip-bottom p-1 px-2 flex items-center justify-center text-gray-800 group-hover:translate-y-2 group-hover:opacity-100 bg-white border border-gray-300 shadow-sm text-xs md:text-sm font-medium transition-[transform,opacity]'>
+			<span className='tooltiptext tooltip-bottom p-1 px-2 flex items-center justify-center text-gray-700 group-hover:translate-y-2 group-hover:opacity-100 bg-white border border-gray-300 shadow-sm text-xs md:text-sm font-medium transition-[transform,opacity]'>
 				{name}
 			</span>
 		</div>
@@ -67,7 +67,7 @@ function SkillsSlideElements() {
 			/>
 			<SkillsSlideElementsWrapper
 				name='Node.js'
-				element={<Node className={iClass + ' border-green-300'} />}
+				element={<Node className={iClass + ' border-green-400'} />}
 			/>
 			<SkillsSlideElementsWrapper
 				name='Express'
@@ -81,7 +81,7 @@ function SkillsSlideElements() {
 			/>
 			<SkillsSlideElementsWrapper
 				name='SpringBoot'
-				element={<SpringBoot className={iClass + ' border-green-300'} />}
+				element={<SpringBoot className={iClass + ' border-green-400'} />}
 			/>
 			<SkillsSlideElementsWrapper
 				name='MySQL'
@@ -103,7 +103,7 @@ export function SkillsSlider() {
 		<div className='flex w-full items-center justify-center overflow-hidden mask-image'>
 			<div className='w-full py-10'>
 				<div
-					className='flex w-max items-center gap-4 anim-slide hover:anim-none py-6'
+					className='flex w-max items-center gap-4 anim-slide py-6'
 					id='langs'
 				>
 					<SkillsSlideElements />

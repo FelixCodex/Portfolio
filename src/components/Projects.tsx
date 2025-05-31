@@ -18,17 +18,32 @@ import { CSS3 } from './elements/CSS3';
 import { Javascript } from './elements/Javascript';
 import { Typescript } from './elements/Typescript';
 import { ReactIcon } from './elements/React';
+import { Node } from './elements/Node';
+import { Express } from './elements/Express';
+import { Tailwind } from './elements/Tailwind';
+import { SQLite } from './elements/SQLite';
+
+const iClass =
+	'w-7 h-7 md:h-14 md:w-14 drop-shadow-lg drop-shadow-[0_4px_6px_rgba(59,130,246,0.3)]';
 
 const projects = [
 	{
-		title: { en: 'Artist Store', es: 'Tienda de artista' },
-		subtitle: { en: 'E-Commerce', es: 'Tienda Virtual' },
+		title: { en: 'javier-david.com', es: 'javier-david.com' },
 		description: {
-			en: 'An E-Commerce to sell the 3d models of the artist',
-			es: 'Una tienda virtual para vender los modelos 3d del artista',
+			en: 'Fully functional online store developed with React and Node.js, it features payment management with Tropipay, authentication with JWT and Google OAuth2, a real-time chat and admin dashboard with data analysis.',
+			es: 'Tienda virtual completametnte funcional desarrollada con React y Node.js, cuenta con manejo de pagos con Tropipay, autenticación con JWT y OAuth2 de Google, un chat en tiempo real y panel de control con analisis de datos',
 		},
 		image: javier,
-		tags: ['React', 'Node.js', 'Express', 'SQLite'],
+		tags: (
+			<>
+				<ReactIcon className={iClass} />
+				<Typescript className={iClass} />
+				<Node className={iClass} />
+				<Express className={iClass} />
+				<Tailwind className={iClass} />
+				<SQLite className={iClass} />
+			</>
+		),
 		hidden: false,
 		liveUrl: 'https://javier-david.com',
 		githubUrl: 'https://github.com/FelixCodex/j-ecommerce-client',
@@ -172,9 +187,6 @@ function SimpleProjectCard({
 	);
 }
 
-const iClass =
-	'w-7 h-7 md:h-14 md:w-14 drop-shadow-lg drop-shadow-[0_4px_6px_rgba(59,130,246,0.3)]';
-
 function ProjectCard({
 	title,
 	description,
@@ -184,10 +196,9 @@ function ProjectCard({
 	githubUrl,
 }: {
 	title: { en: string; es: string };
-	subtitle: { en: string; es: string };
 	description: { en: string; es: string };
 	image: string;
-	tags: string[];
+	tags: ReactNode;
 	liveUrl?: string;
 	githubUrl: string;
 }) {
@@ -215,7 +226,7 @@ function ProjectCard({
 				</div>
 				<p className='flex items-center justify-center gap-2'>
 					<LockIcon className='text-gray-600 w-4 h-4 hover:scale-125 transition-[transform,color] hover:text-green-500'></LockIcon>
-					<span className='text-gray-800'>javier-david.com</span>
+					<span className='text-gray-800'>{title[language]}</span>
 				</p>
 				<div className='absolute top-[.45rem] right-4 flex items-center justify-center gap-3 p-2 px-3 border border-gray-200 rounded-xl'>
 					{liveUrl && (
@@ -245,16 +256,13 @@ function ProjectCard({
 					className='w-full h-full border max-h-[33.125rem] border-gray-200 object-cover rounded-xl'
 				/>
 				<div
-					className={`top-0 left-0 w-full flex gap-1 rounded-xl p-2 px-3 border border-gray-200
+					className={`top-0 left-0 w-full flex flex-col-reverse md:flex-row-reverse gap-1 rounded-xl p-1 px-2 border border-gray-200
 			 					 items-start justify-between h-full`}
 				>
-					<div className='px-1 md:p-2 w-fit rounded-lg backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center'>
-						<HTML5 className={iClass} />
-						<CSS3 className={iClass} />
-						<Javascript className={iClass} />
-						<Typescript className={iClass} />
+					<div className='px-1 md:p-1 w-fit rounded-lg backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center'>
+						{tags}
 					</div>
-					<div className='rounded-lg w-fit backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center px-1 md:p-3'>
+					<div className='rounded-lg w-fit text-xl cursor-default text-gray-600 backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center px-1 md:p-3'>
 						<p>{description[language]}</p>
 					</div>
 				</div>
