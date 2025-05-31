@@ -18,10 +18,7 @@ export function SimpleProjectCard({
 	const { language } = useLanguage();
 	return (
 		<div
-			className={`p-2 px-3 hover:scale-[102%] group flex items-center gap-5 transition-[transform,box-shadow] cursor-pointer select-none bg-white/60 hover:shadow-lg hover:shadow-blue-200 border border-gray-200 rounded-lg shadow-sm`}
-			onClick={() => {
-				location.href = link ? link : github;
-			}}
+			className={`p-2 px-3 hover:scale-[102%] group flex items-center gap-5 transition-[transform,box-shadow] select-none bg-white/60 hover:shadow-lg hover:shadow-blue-200 border border-gray-200 rounded-lg shadow-sm`}
 		>
 			<div className='flex flex-col'>
 				<p className='flex gap-4 items-center'>
@@ -42,7 +39,7 @@ export function SimpleProjectCard({
 						rel='noopener noreferrer'
 						className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
 					>
-						<ExternalLink className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
+						<ExternalLink className='w-6 h-6 hover:scale-[120%] transition-[transform] cursor-pointer' />
 					</a>
 				)}
 				<a
@@ -51,7 +48,7 @@ export function SimpleProjectCard({
 					rel='noopener noreferrer'
 					className='flex items-center gap-2 text-gray-700 hover:text-gray-900'
 				>
-					<Github className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
+					<Github className='w-6 h-6 hover:scale-[120%] transition-[transform] cursor-pointer' />
 				</a>
 			</div>
 		</div>
