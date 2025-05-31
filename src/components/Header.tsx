@@ -12,15 +12,18 @@ export function Header() {
 	const { language, setLanguage } = useLanguage();
 	const { navigatePage } = useNavigatePage();
 
-	const handlerClick = (e: React.MouseEvent<HTMLElement>) => {
-		document.querySelector('.mobile-links')?.classList.toggle('showLinks');
+	const handlerClickMobileLink = (e: React.MouseEvent<HTMLElement>) => {
+		handlerToggleMobileMenu();
+		navigatePage(e);
+	};
+
+	const handlerToggleMobileMenu = () => {
 		if (bool) {
 			setIcon(<LucideAlignJustify className='w-7 h-7' />);
 		} else {
 			setIcon(<XIcon className='w-7 h-7' />);
 		}
 		setBool(!bool);
-		navigatePage(e);
 	};
 
 	const handleChangeLanguage = () => {
@@ -77,7 +80,7 @@ export function Header() {
 								checked={language == 'es'}
 								onChange={handleChangeLanguage}
 							></Toggle>
-							<button onClick={handlerClick}>{icon}</button>
+							<button onClick={handlerToggleMobileMenu}>{icon}</button>
 						</div>
 					</div>
 
@@ -90,21 +93,21 @@ export function Header() {
 							<p
 								data-id=''
 								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
-								onClick={handlerClick}
+								onClick={handlerClickMobileLink}
 							>
 								{PAGES.HOME[language]}
 							</p>
 							<p
 								data-id='about'
 								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
-								onClick={handlerClick}
+								onClick={handlerClickMobileLink}
 							>
 								{PAGES.ABOUT[language]}
 							</p>
 							<p
 								data-id='contact'
 								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
-								onClick={handlerClick}
+								onClick={handlerClickMobileLink}
 							>
 								{PAGES.CONTACT[language]}
 							</p>
