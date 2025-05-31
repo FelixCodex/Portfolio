@@ -4,13 +4,16 @@ import { HERO } from '../const';
 import { CVButton } from './elements/CVButton';
 import { SocialMedia } from './elements/SocialMedia';
 
+// pt-56 pb-24 md:pt-[20.125rem] md:pb-[11.25rem]
+// pt-[37%] pb-[15.68%] md:pt-[26.26%] md:pb-[14.68%]
+
 export function Hero() {
 	const { language } = useLanguage();
 
 	return (
 		<section className='bg-[--bg_pri] min-h-screen'>
-			<div className='sect-container mx-auto flex flex-col items-center px-4'>
-				<div className='max-w-[51.125rem] pt-56 pb-24 md:pt-[20.125rem] md:pb-[11.25rem] px-4 flex items-center gap-8 flex-col'>
+			<div className='sect-container mx-auto flex h-full flex-col items-center px-4'>
+				<div className='max-w-[51.125rem] pt-[37%] pb-[15.68%] md:pt-[26.26%] md:pb-[14.68%] px-4 flex items-center gap-8 flex-col'>
 					<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold text-center'>
 						{HERO.TITLE[language]}
 					</h1>

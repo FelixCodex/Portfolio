@@ -194,7 +194,7 @@ function ProjectCard({
 	const { language } = useLanguage();
 
 	return (
-		<div className='relative overflow-hidden w-[90%] group rounded-2xl hover:scale-[101%] transition-transform max-h-[40rem] h-fit p-4 shadow-sm bg-white/60 border border-gray-300'>
+		<div className='relative overflow-hidden w-[90%] group rounded-2xl hover:scale-[101%] transition-transform h-fit p-4 shadow-sm bg-white/60 border border-gray-300'>
 			<div className='w-full flex items-center justify-start md:justify-center mb-4'>
 				<div className='absolute top-[.76rem] left-4 pt-[.625rem] md:flex items-center justify-center gap-2 hidden'>
 					<Circle
@@ -242,19 +242,19 @@ function ProjectCard({
 				<img
 					src={image}
 					alt={title[language]}
-					className='w-full h-full border max-h-[33.125rem] border-gray-200 object-cover rounded-xl transition-[box-shadow]'
+					className='w-full h-full border max-h-[33.125rem] border-gray-200 object-cover rounded-xl'
 				/>
 				<div
-					className={`md:absolute top-0 left-0 w-full flex flex-col-reverse gap-1 rounded-xl p-2 px-3 border border-gray-200 
-					md:flex-row items-start justify-between h-full md:p-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity`}
+					className={`top-0 left-0 w-full flex gap-1 rounded-xl p-2 px-3 border border-gray-200
+			 					 items-start justify-between h-full`}
 				>
-					<div className='px-1 md:p-2 w-fit rounded-lg backdrop-blur-md bg-white/15 border border-white/20 md:shadow-sm flex items-center justify-center'>
+					<div className='px-1 md:p-2 w-fit rounded-lg backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center'>
 						<HTML5 className={iClass} />
 						<CSS3 className={iClass} />
 						<Javascript className={iClass} />
 						<Typescript className={iClass} />
 					</div>
-					<div className='rounded-lg w-fit backdrop-blur-md bg-white/15 border border-white/20 md:shadow-sm flex items-center justify-center px-1 md:p-3'>
+					<div className='rounded-lg w-fit backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center px-1 md:p-3'>
 						<p>{description[language]}</p>
 					</div>
 				</div>

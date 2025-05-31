@@ -57,12 +57,14 @@ const journey = {
 				<a
 					href='https://www.youtube.com/@pildorasinformaticas'
 					className={linkClass}
+					target='_blank'
 				>
 					Programación ATS
 				</a>{' '}
 				y{' '}
 				<a
 					href='https://www.youtube.com/@pildorasinformaticas'
+					target='_blank'
 					className={linkClass}
 				>
 					Píldoras Informáticas
@@ -79,6 +81,7 @@ const journey = {
 				<a
 					href='https://www.youtube.com/channel/UC7QoKU6bj1QbXQuNIjan82Q'
 					className={linkClass}
+					target='_blank'
 				>
 					Programación ATS
 				</a>{' '}
@@ -86,6 +89,7 @@ const journey = {
 				<a
 					href='https://www.youtube.com/@pildorasinformaticas'
 					className={linkClass}
+					target='_blank'
 				>
 					Píldoras Informáticas
 				</a>
@@ -102,6 +106,7 @@ const journey = {
 				<a
 					href='https://www.youtube.com/@soydalto'
 					className={linkClass}
+					target='_blank'
 				>
 					SoyDalto
 				</a>{' '}
@@ -116,6 +121,7 @@ const journey = {
 				<a
 					href='https://www.youtube.com/@soydalto'
 					className={linkClass}
+					target='_blank'
 				>
 					SoyDalto
 				</a>{' '}
@@ -133,6 +139,7 @@ const journey = {
 				<a
 					href='https://www.youtube.com/@midulive'
 					className={linkClass}
+					target='_blank'
 				>
 					Midudev
 				</a>
@@ -148,6 +155,7 @@ const journey = {
 				<a
 					href='https://www.youtube.com/@midulive'
 					className={linkClass}
+					target='_blank'
 				>
 					Midudev
 				</a>

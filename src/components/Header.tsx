@@ -12,15 +12,15 @@ export function Header() {
 	const { language, setLanguage } = useLanguage();
 	const { navigatePage } = useNavigatePage();
 
-	const handlerClick = () => {
+	const handlerClick = (e: React.MouseEvent<HTMLElement>) => {
 		document.querySelector('.mobile-links')?.classList.toggle('showLinks');
 		if (bool) {
-			setBool(!bool);
 			setIcon(<LucideAlignJustify className='w-7 h-7' />);
 		} else {
-			setBool(!bool);
 			setIcon(<XIcon className='w-7 h-7' />);
 		}
+		setBool(!bool);
+		navigatePage(e);
 	};
 
 	const handleChangeLanguage = () => {
@@ -87,27 +87,27 @@ export function Header() {
 						} transition-[max-height] duration-500 ease-in-out md:max-h-0 overflow-hidden w-full`}
 					>
 						<div className='flex flex-col justify-start w-full gap-4 px-2 pb-5 pt-3'>
-							<a
-								href='#skills'
-								className='hover:text-blue-500 text-lg font-medium transition-colors'
+							<p
+								data-id=''
+								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
 								onClick={handlerClick}
 							>
 								{PAGES.HOME[language]}
-							</a>
-							<a
-								href='#projects'
-								className='hover:text-blue-500 text-lg font-medium transition-colors'
+							</p>
+							<p
+								data-id='about'
+								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
 								onClick={handlerClick}
 							>
 								{PAGES.ABOUT[language]}
-							</a>
-							<a
-								href='#contact'
-								className='hover:text-blue-500 text-lg font-medium transition-colors'
+							</p>
+							<p
+								data-id='contact'
+								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
 								onClick={handlerClick}
 							>
 								{PAGES.CONTACT[language]}
-							</a>
+							</p>
 						</div>
 					</div>
 				</nav>
