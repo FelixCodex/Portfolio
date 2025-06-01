@@ -102,7 +102,7 @@ export function Skills() {
 			className='py-20 bg-[#F5F7FA]'
 		>
 			<div className='sect-container mx-auto px-4'>
-				<h2 className='text-4xl md:text-5xl text-gray-900 font-bold text-center mb-2 sm:mb-12'>
+				<h2 className='text-4xl md:text-5xl text-gray-900 font-bold text-center mb-2 sm:mb-6'>
 					{SKILLS.TITLE[language]}
 				</h2>
 				<SkillsSlider></SkillsSlider>
