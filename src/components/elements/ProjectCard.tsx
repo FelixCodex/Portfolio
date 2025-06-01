@@ -75,13 +75,13 @@ export function ProjectCard({
 					className='w-full h-full border max-h-[33.125rem] border-gray-200 object-cover rounded-xl'
 				/>
 				<div
-					className={`top-0 left-0 w-full flex flex-col-reverse gap-1 rounded-xl p-1 px-2 border border-gray-200
+					className={`top-0 left-0 w-full flex flex-col-reverse gap-1 rounded-xl p-2 border border-gray-200
 			 					 items-start justify-between h-full`}
 				>
-					<div className='px-1 md:p-1 w-fit gap-1 flex-wrap rounded-lg backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center'>
+					<div className='p-1 w-fit gap-1 flex-wrap rounded-lg backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-start'>
 						{tags.map(el => skills[el])}
 					</div>
-					<div className='rounded-lg w-fit font-medium sm:font-normal text-sm sm:text-lg md:text-xl cursor-default text-gray-600 backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-center px-1 md:p-3'>
+					<div className='rounded-lg w-fit font-medium sm:font-normal text-sm sm:text-lg md:text-xl cursor-default text-gray-600 backdrop-blur-md bg-white/15 border border-white/20 flex px-1 md:p-3'>
 						<p>{description[language]}</p>
 					</div>
 				</div>
