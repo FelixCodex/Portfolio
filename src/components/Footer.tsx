@@ -13,7 +13,7 @@ export function Footer() {
 	const [posx, setPosx] = useState(-96);
 	const { navigatePage } = useNavigatePage();
 	const { language } = useLanguage();
-	const handleMouseMove = (e: MouseEvent<HTMLAnchorElement>) => {
+	const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
 		setPosx(e.clientX - e.currentTarget.offsetLeft - 96);
 	};
 	return (
@@ -24,7 +24,7 @@ export function Footer() {
 						{FOOTER.CONTACT_TITLE[language]}
 					</h2>
 					<div className='flex items-center justify-center gap-8 flex-col md:flex-row'>
-						<a
+						<button
 							data-id='contact'
 							className='w-48 h-14 relative group overflow-hidden cursor-pointer bg-gradient-nm flex text-lg font-medium items-center justify-center rounded-xl text-white'
 							onMouseMove={handleMouseMove}
@@ -35,7 +35,7 @@ export function Footer() {
 								style={{ transform: `translateX(${posx}px)` }}
 							></span>
 							<span className='z-10'>{FOOTER.CONTACT[language]}</span>
-						</a>
+						</button>
 						<p className='flex gap-2'>
 							<Check className='w-9 h-9'></Check>
 							<span className='text-2xl font-medium'>

@@ -11,24 +11,28 @@ export function SocialMedia() {
 				<a
 					href=''
 					className={aClass + ' ml-3'}
+					aria-label='Linkedin'
 				>
 					<Linkedin className={iClass} />
 				</a>
 				<a
 					href=''
 					className={aClass}
+					aria-label='Facebook'
 				>
 					<Facebook className={iClass} />
 				</a>
 				<a
 					href=''
 					className={aClass}
+					aria-label='Github'
 				>
 					<Github className={iClass} />
 				</a>
 				<a
 					href=''
 					className={aClass}
+					aria-label='Email'
 				>
 					<Mail className={iClass} />
 				</a>

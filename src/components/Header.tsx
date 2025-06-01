@@ -80,7 +80,12 @@ export function Header() {
 								checked={language == 'es'}
 								onChange={handleChangeLanguage}
 							></Toggle>
-							<button onClick={handlerToggleMobileMenu}>{icon}</button>
+							<button
+								onClick={handlerToggleMobileMenu}
+								aria-label='Menu'
+							>
+								{icon}
+							</button>
 						</div>
 					</div>
 

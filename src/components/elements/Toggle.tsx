@@ -21,10 +21,10 @@ export function Toggle({ checked, onChange, className }: ToggleProps) {
 				aria-checked={checked}
 				onClick={() => onChange(!checked)}
 			>
-				<span className='pointer-events-none text-gray-600 h-[calc(100%-0.20rem)] w-6 absolute left-[0.10rem] flex items-center justify-center text-xs font-bold'>
+				<span className='pointer-events-none text-gray-400 h-[calc(100%-0.20rem)] w-6 absolute left-[0.10rem] flex items-center justify-center text-xs font-bold'>
 					EN
 				</span>
-				<span className='pointer-events-none text-gray-600 h-[calc(100%-0.20rem)] w-6 absolute right-[0.10rem] flex items-center justify-center text-xs font-bold'>
+				<span className='pointer-events-none text-gray-400 h-[calc(100%-0.20rem)] w-6 absolute right-[0.10rem] flex items-center justify-center text-xs font-bold'>
 					ES
 				</span>
 				<span
