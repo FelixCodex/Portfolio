@@ -51,6 +51,7 @@ export function ProjectCard({
 							href={liveUrl}
 							target='_blank'
 							rel='noopener noreferrer'
+							aria-label={'Direct link for ' + title[language]}
 							className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
 						>
 							<ExternalLink className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
@@ -60,6 +61,7 @@ export function ProjectCard({
 						href={githubUrl}
 						target='_blank'
 						rel='noopener noreferrer'
+						aria-label={'Github link for ' + title[language]}
 						className='flex items-center gap-2 text-gray-700 hover:text-gray-900'
 					>
 						<Github className='w-6 h-6 hover:scale-[120%] transition-[transform]' />

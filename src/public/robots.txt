@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: 
-Sitemap: https://javier-david.com/sitemap.xml
