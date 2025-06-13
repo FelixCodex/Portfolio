@@ -9,28 +9,28 @@ export function SocialMedia() {
 		<>
 			<div className='flex items-center gap-2'>
 				<a
-					href=''
+					href='https://cu.linkedin.com/in/jos%C3%A9-felix-lorenzo-rodr%C3%ADguez-b747b6328'
 					className={aClass + ' ml-3'}
 					aria-label='Linkedin'
 				>
 					<Linkedin className={iClass} />
 				</a>
 				<a
-					href=''
+					href='https://www.facebook.com/profile.php?id=100088139118774'
 					className={aClass}
 					aria-label='Facebook'
 				>
 					<Facebook className={iClass} />
 				</a>
 				<a
-					href=''
+					href='https://github.com/FelixCodex'
 					className={aClass}
 					aria-label='Github'
 				>
 					<Github className={iClass} />
 				</a>
 				<a
-					href=''
+					href='mailto:josefelixlr05@gmail.com'
 					className={aClass}
 					aria-label='Email'
 				>
