@@ -75,10 +75,10 @@ export function Projects() {
 			className='pb-20 pt-28 bg-gradient-to-b min-h-[100dvh] h-fit from-[--bg_pri] to-[#F5F7FA]'
 		>
 			<div className='sect-container mx-auto px-4 flex flex-col gap-16 md:gap-28'>
-				<h2 className='text-5xl text-gray-900 font-bold text-center'>
+				<h2 className='text-5xl text-gray-900 font-bold text-center hidder'>
 					{PROJECTS.TITLE[language]}
 				</h2>
-				<div className='flex flex-col gap-8 items-center'>
+				<div className='flex flex-col gap-8 items-center hidder'>
 					{projects.map(project => {
 						const title = project.title[language];
 						if (project.hidden) return;
@@ -90,7 +90,7 @@ export function Projects() {
 						);
 					})}
 				</div>
-				<div className='relative w-full h-fit p-4 pt-6 gap-7 flex flex-col items-center justify-center'>
+				<div className='relative w-full h-fit p-4 pt-6 gap-7 flex flex-col items-center justify-center hidder'>
 					<div className='absolute top-0 h-[.0625rem] w-[90%] bg-gradient-to-r from-transparent via-gray-300 to-transparent' />
 					<h2 className='text-2xl text-gray-700 font-medium text-center'>
 						{PROJECTS.OTHER[language]}

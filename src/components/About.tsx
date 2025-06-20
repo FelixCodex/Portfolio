@@ -1,6 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
 import { ABOUT } from '../const';
+import { useObserver } from '../hooks/useObserver';
 
 function Step({ text }: { text?: ReactNode }) {
 	return (
@@ -191,10 +192,14 @@ const stepClass =
 
 export default function About() {
 	const { language } = useLanguage();
+	const observe = useObserver();
+	useEffect(() => {
+		observe();
+	}, []);
 	return (
 		<section className='bg-gray-50 min-h-screen'>
 			<div className='sect-container mx-auto h-full flex flex-col items-center justify-center px-4 pt-32 pb-12 md:pt-[8rem] md:pb-[5rem]'>
-				<div className='p-4 md:p-12 md:px-14 flex flex-col items-start justify-center gap-8 mb-8 md:mb-0'>
+				<div className='p-4 md:p-12 md:px-14 flex flex-col items-start justify-center gap-8 mb-8 md:mb-0 hidder'>
 					<h1 className='text-5xl md:text-6xl font-semibold text-gray-900'>
 						{ABOUT.WHO[language]}
 					</h1>
@@ -209,7 +214,7 @@ export default function About() {
 					</p>
 				</div>
 				<div className='p-4 md:p-12 flex flex-col md:flex-row w-full items-start h-fit justify-between gap-8'>
-					<div className='w-full md:w-96 mb-6 flex flex-col gap-20'>
+					<div className='w-full md:w-96 mb-6 flex flex-col gap-20 hidder'>
 						<p className='text-5xl text-gray-800 font-medium'>
 							{ABOUT.JOURNEY[language]}
 						</p>
@@ -224,7 +229,7 @@ export default function About() {
 								<Year year='2023' />
 								<div className='flex flex-col gap-8'></div>
 							</div>
-							<div className={stepClass}>
+							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q3-Q4' />
 								<div className='flex flex-col gap-8'>
 									<Step text={journey.end2023[language]}></Step>
@@ -234,13 +239,13 @@ export default function About() {
 								<Year year='2024' />
 								<Divisor />
 							</div>
-							<div className={stepClass}>
+							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q1-Q2' />
 								<div className='flex flex-col gap-8'>
 									<Step text={journey.first_mid2024[language]}></Step>
 								</div>
 							</div>
-							<div className={stepClass}>
+							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q3-Q4' />
 								<div className='flex flex-col gap-8'>
 									<Step text={journey.sec_mid2024[language]}></Step>
@@ -250,7 +255,7 @@ export default function About() {
 								<Year year='2025' />
 								<div className='flex flex-col gap-8'></div>
 							</div>
-							<div className={stepClass}>
+							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q1' />
 								<div className='flex flex-col gap-8'>
 									<Step text={journey.start2025[language]}></Step>

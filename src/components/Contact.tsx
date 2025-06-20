@@ -1,6 +1,8 @@
 import { Facebook, Github, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { CONTACT } from '../const';
+import { useObserver } from '../hooks/useObserver';
+import { useEffect } from 'react';
 
 const iClass =
 	'w-7 h-7 text-blue-600 group-hover:scale-[140%] transition-transform';
@@ -9,13 +11,17 @@ const sClass =
 
 export default function Contact() {
 	const { language } = useLanguage();
+	const observe = useObserver();
+	useEffect(() => {
+		observe();
+	}, []);
 
 	return (
 		<section
 			id='contact'
 			className='bg-gray-50 min-h-screen'
 		>
-			<div className='sect-container relative mx-auto flex items-center justify-center px-4 pt-32 pb-24 md:pt-[12rem] md:pb-[11.25rem]'>
+			<div className='sect-container relative mx-auto flex items-center justify-center px-4 pt-32 pb-24 md:pt-[12rem] md:pb-[11.25rem] hidder'>
 				<div className='w-full max-w-[64rem] p-3 md:p-12'>
 					<h2 className='text-4xl md:text-6xl text-gray-900 font-medium text-start mb-12'>
 						{CONTACT.TITLE[language]}
