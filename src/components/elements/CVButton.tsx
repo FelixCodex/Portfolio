@@ -7,7 +7,7 @@ export function CVButton() {
 	return (
 		<>
 			{language == 'es' ? (
-				<div className='dasher anim-dasher p-[2px] rounded-lg shadow-nm hover:shadow-hm transition-[background-color,box-shadow] duration-[400ms] hover:bg-[#51a5ff] hover'>
+				<div className='dasher anim-dasher w-fit h-fit p-[2px] rounded-lg shadow-nm hover:shadow-hm transition-[background-color,box-shadow] duration-[400ms] hover:bg-[#51a5ff] hover'>
 					<a
 						href='/src/ResumeCV-es.pdf'
 						download='JoséFelixCV.pdf'
