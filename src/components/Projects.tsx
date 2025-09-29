@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ExternalLink, Github, Link } from 'lucide-react';
 import javier from '../javier-david.webp';
 import { useLanguage } from '../hooks/useLanguage';
 import { PROJECTS } from '../const';
@@ -40,22 +40,13 @@ const small_projects = [
 		github: 'https://github.com/FelixCodex/EasePassword',
 	},
 	{
-		title: { en: 'Local ProductyFlow', es: 'Local ProductyFlow' },
-		subtitle: {
-			en: 'Task Management App',
-			es: 'Aplicación de gestión de tareas',
-		},
-		icon: <CheckCircle2 className='text-[#4f46e5] h-5 w-5' />,
-		link: 'https://localproductyflow.pages.dev/',
-		github: 'https://github.com/FelixCodex/LocalProductyFlow',
-	},
-	{
 		title: { en: 'ProductyFlow', es: 'ProductyFlow' },
 		subtitle: {
 			en: 'Task Management App',
 			es: 'Aplicación de gestión de tareas',
 		},
 		icon: <CheckCircle2 className='text-[#4f46e5] h-5 w-5' />,
+		link: 'https://localproductyflow.pages.dev/',
 		github: 'https://github.com/FelixCodex/ProductyFlow',
 	},
 	{

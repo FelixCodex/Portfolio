@@ -25,7 +25,7 @@ export function Hero() {
 					<CVButton></CVButton>
 					<a
 						href='#projects'
-						className='inline-flex items-center w-full md:w-fit justify-center gap-2 bg-[#007BFF] hover:bg-[#00a2ff] text-white text-lg font-medium px-6 py-3 rounded-lg transition-colors'
+						className='inline-flex items-center w-full md:w-fit justify-center gap-2 bg-[#007BFF] hover:bg-[#00a2ff] text-white text-lg font-medium px-6 py-3.5 rounded-lg transition-colors'
 					>
 						{HERO.VIEW[language]}
 						<ArrowRight className='w-5 h-5 rotate-90' />
