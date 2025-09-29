@@ -34,7 +34,7 @@ export function Header() {
 		<header className='text-gray-900 h-[4.125rem] fixed z-50 top-3 px-3 xl:px-0 w-full items-center'>
 			<div className='sect-container mx-auto h-full'>
 				<nav
-					className='flex justify-between px-7 relative z-10 backdrop-blur-md bg-white/15 border border-white/40 rounded-3xl items-center flex-col h-fit'
+					className='flex justify-between px-7 relative z-10 backdrop-blur-md bg-white/15 border border-white/50 rounded-3xl items-center flex-col h-fit'
 					style={{
 						boxShadow:
 							'0 8px 32px rgba(0, 0, 0, 0.1), inset 0 0 15px 0px rgba(255, 255, 255, 0.3)',

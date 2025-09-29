@@ -13,11 +13,11 @@ export function Hero() {
 	return (
 		<section className='bg-[--bg_pri] min-h-screen'>
 			<div className='sect-container mx-auto flex h-full flex-col items-center px-4 hidder'>
-				<div className='max-w-[51.125rem] pt-[37%] pb-[15.68%] md:pt-[26.26%] md:pb-[14.68%] px-4 flex items-center gap-8 flex-col'>
-					<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold text-center'>
+				<div className='max-w-[51.125rem] pt-[37%] pb-[15.68%] md:pt-[26.26%] md:pb-[12.68%] px-4 flex items-center gap-8 flex-col'>
+					<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold text-center text-gray-950'>
 						{HERO.TITLE[language]}
 					</h1>
-					<p className='text-lg md:text-xl font-medium text-center text-[#444]'>
+					<p className='text-lg md:text-xl font-medium text-center text-gray-700'>
 						{HERO.DESCRIPTION[language]}
 					</p>
 				</div>
@@ -31,6 +31,11 @@ export function Hero() {
 						<ArrowRight className='w-5 h-5 rotate-90' />
 					</a>
 				</div>
+				{/* <div
+					className='absolute -top-1/4 left-[calc(50%-110px)] md:left-[calc(50%-260px)] w-[220px] h-[220px] md:w-[520px] md:h-[520px] opacity-20 -z-10 
+                      bg-[#f5cb40] transform -rotate-45 blur-[100px] 
+                      pointer-events-none'
+				/> */}
 				<SocialMedia></SocialMedia>
 				<div className='flex mt-5 gap-5 hidden'>
 					<div className='w-32 h-32 bg-[#007BFF]'></div>

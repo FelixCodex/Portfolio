@@ -171,6 +171,16 @@
 	);
 }
 
+.bluebow-border-with-xy {
+	animation: rotateRainbow 8s linear infinite;
+	background: conic-gradient(
+		from calc(var(--r)) at var(--x) 28px,
+		#00a2ff 0,
+		#007bff 50%,
+		#00ffff 100%
+	);
+}
+
 .shine:hover::after {
 	inset: 10% 100%;
 }
