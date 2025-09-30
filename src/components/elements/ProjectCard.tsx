@@ -1,7 +1,8 @@
-import { Circle, ExternalLink, Github, LockIcon } from 'lucide-react';
+import { ExternalLink, Github, LockIcon } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useSkills } from '../../hooks/useSkills';
 import { Skills } from '../../types';
+import { PROJECTS } from '../../const';
 
 export function ProjectCard({
 	title,
@@ -22,67 +23,99 @@ export function ProjectCard({
 	const skills = useSkills();
 
 	return (
-		<div className='relative overflow-hidden w-[90%] group rounded-2xl hover:scale-[101%] transition-transform h-fit p-4 shadow-sm bg-white/60 border border-gray-300'>
-			<div className='w-full flex items-center justify-start md:justify-center mb-4'>
-				<div className='absolute top-[.76rem] left-4 pt-[.625rem] md:flex items-center justify-center gap-2 hidden'>
-					<Circle
-						className='w-3 h-3 hover:scale-125 transition-[transform,color]'
-						fill='#4b5563'
-						stroke='#4b5563 '
-					></Circle>
-					<Circle
-						className='w-3 h-3 hover:scale-125 transition-[transform,color]'
-						fill='#4b5563'
-						stroke='#4b5563 '
-					></Circle>
-					<Circle
-						className='w-3 h-3 hover:scale-125 transition-[transform,color]'
-						fill='#4b5563'
-						stroke='#4b5563 '
-					></Circle>
-				</div>
-				<p className='flex items-center justify-center gap-2'>
-					<LockIcon className='text-gray-600 w-4 h-4 hover:scale-125 transition-[transform,color] hover:text-green-500'></LockIcon>
-					<span className='text-gray-800'>{title[language]}</span>
-				</p>
-				<div className='absolute top-[.45rem] right-4 flex items-center justify-center gap-3 p-2 px-3 border border-gray-200 rounded-xl'>
-					{liveUrl && (
+		<div className='group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1'>
+			<div className='relative bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200'>
+				<div className='flex items-center justify-between'>
+					<div className='flex items-center gap-3'>
+						<div className='p-2 bg-white rounded-lg shadow-sm border border-gray-200 group-hover:border-green-400 transition-colors'>
+							<LockIcon className='text-gray-600 w-4 h-4 group-hover:text-green-500 transition-colors' />
+						</div>
+						<h3 className='text-xl font-semibold text-gray-900'>
+							{title[language]}
+						</h3>
+					</div>
+
+					<div className='flex items-center gap-2'>
+						{liveUrl && (
+							<a
+								href={liveUrl}
+								target='_blank'
+								rel='noopener noreferrer'
+								aria-label={'Direct link for ' + title[language]}
+								className='p-2.5 bg-white rounded-lg border border-gray-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300 hover:scale-110 transition-all duration-200 shadow-sm'
+							>
+								<ExternalLink className='w-5 h-5' />
+							</a>
+						)}
 						<a
-							href={liveUrl}
+							href={githubUrl}
 							target='_blank'
 							rel='noopener noreferrer'
-							aria-label={'Direct link for ' + title[language]}
-							className='flex items-center gap-2 text-blue-600 hover:text-blue-700'
+							aria-label={'Github link for ' + title[language]}
+							className='p-2.5 bg-white rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-900 hover:text-white hover:scale-110 transition-all duration-200 shadow-sm'
 						>
-							<ExternalLink className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
+							<Github className='w-5 h-5' />
 						</a>
-					)}
-					<a
-						href={githubUrl}
-						target='_blank'
-						rel='noopener noreferrer'
-						aria-label={'Github link for ' + title[language]}
-						className='flex items-center gap-2 text-gray-700 hover:text-gray-900'
-					>
-						<Github className='w-6 h-6 hover:scale-[120%] transition-[transform]' />
-					</a>
-				</div>
-			</div>
-			<div className='relative h-full flex flex-col gap-2'>
-				<img
-					src={image}
-					alt={title[language]}
-					className='w-full h-full border max-h-[33.125rem] border-gray-200 object-cover rounded-xl'
-				/>
-				<div
-					className={`top-0 left-0 w-full flex flex-col-reverse gap-1 rounded-xl p-2 border border-gray-200
-			 					 items-start justify-between h-full`}
-				>
-					<div className='p-1 w-fit gap-1 flex-wrap rounded-lg backdrop-blur-md bg-white/15 border border-white/20 flex items-center justify-start'>
-						{tags.map(el => skills[el])}
 					</div>
-					<div className='rounded-lg w-fit font-medium sm:font-normal text-sm sm:text-lg md:text-xl cursor-default text-gray-600 backdrop-blur-md bg-white/15 border border-white/20 flex px-1 md:p-3'>
-						<p>{description[language]}</p>
+				</div>
+
+				<div className='absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+			</div>
+
+			<div className='p-6'>
+				<div className='flex flex-col lg:flex-row gap-6'>
+					{/* Image Gallery */}
+					<div className='flex-1 space-y-3'>
+						{/* Main Image */}
+						<div className='relative overflow-hidden rounded-xl border border-gray-200 shadow-md group/img'>
+							<img
+								src={image}
+								alt={title[language]}
+								className='w-full h-auto max-h-[400px] object-cover transition-transform duration-500 group-hover/img:scale-105'
+							/>
+							<div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300'></div>
+						</div>
+
+						{/* Thumbnail Gallery */}
+						<div className='grid grid-cols-2 gap-3'>
+							<div className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'>
+								<img
+									src={image}
+									alt={title[language]}
+									className='w-full h-32 object-cover transition-transform duration-300 group-hover/thumb:scale-110'
+								/>
+							</div>
+							<div className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'>
+								<img
+									src={image}
+									alt={title[language]}
+									className='w-full h-32 object-cover transition-transform duration-300 group-hover/thumb:scale-110'
+								/>
+							</div>
+						</div>
+					</div>
+
+					{/* Project Info */}
+					<div className='flex-1 flex flex-col gap-4'>
+						{/* Description */}
+						<div className='flex-1 bg-gradient-to-br h-full from-gray-50 to-white rounded-xl p-5 border border-gray-200 shadow-sm'>
+							<h4 className='text- font-semibold text-gray-500 uppercase tracking-wide mb-2'>
+								{PROJECTS.DESCRIPTION[language]}
+							</h4>
+							<p className='text-gray-700 font-medium leading-relaxed text-base'>
+								{description[language]}
+							</p>
+						</div>
+
+						{/* Technologies */}
+						<div className='bg-gradient-to-br h-full from-gray-50 to-white rounded-xl p-5 border border-gray-200 shadow-sm'>
+							<h4 className='text- font-semibold text-gray-500 uppercase tracking-wide mb-2'>
+								{PROJECTS.TECNOLOGIES[language]}
+							</h4>
+							<div className='flex flex-wrap gap-2'>
+								{tags.map(el => skills[el])}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

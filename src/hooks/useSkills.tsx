@@ -12,7 +12,7 @@ import { Tailwind } from '../components/icons/Tailwind';
 import { Typescript } from '../components/icons/Typescript';
 
 const iClass =
-	'min-h-12 sm:min-w-12 w-12 h-12 sm:min-h-14 sm:min-w-14 md:min-h-20 md:min-w-20 shadow-md bg-white transition-transform shadow-gray-200 border border-gray-300 rounded-lg sm:rounded-xl p-1 sm:p-2';
+	'w-14 h-14 min-h-14 min-w-14 md:min-h-20 md:min-w-20 shadow-md bg-white transition-transform shadow-gray-200 border border-gray-300 rounded-lg sm:rounded-xl p-1 sm:p-2';
 
 export function useSkills() {
 	return {

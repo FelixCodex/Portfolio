@@ -27,6 +27,8 @@ export const PROJECTS = {
 	OTHER: { es: 'Otros proyectos', en: 'Other Projects' },
 	LINK: { es: 'Link a la Demo', en: 'Live Demo' },
 	CODE: { es: 'Código', en: 'Code' },
+	DESCRIPTION: { es: 'Descripción', en: 'Description' },
+	TECNOLOGIES: { es: 'Tecnologías', en: 'Technologies' },
 };
 export const FOOTER = {
 	CONTACT: { es: 'Contactame ahora', en: 'Contact me now' },
