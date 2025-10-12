@@ -4,14 +4,14 @@ import { Footer } from '../components/Footer.tsx';
 import { Header } from '../components/Header.tsx';
 import { Loading } from '../components/Loading.tsx';
 
-const Home = lazy(() => import('../components/Home.tsx'));
-const About = lazy(() => import('../components/About.tsx'));
-const Contact = lazy(() => import('../components/Contact.tsx'));
+const Home = lazy(() => import('../pages/Home.tsx'));
+const About = lazy(() => import('../pages/About.tsx'));
+const Contact = lazy(() => import('../pages/Contact.tsx'));
 
 export function AppRouter() {
 	return (
 		<Router>
-			<div className='min-h-screen bg-white'>
+			<div className='min-h-screen relative bg-white'>
 				<Header />
 				<main>
 					<Suspense fallback={<Loading />}>

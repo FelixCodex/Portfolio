@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { CheckCircle2, ExternalLink, Github, Link } from 'lucide-react';
-import javier from '../javier-david.webp';
 import { useLanguage } from '../hooks/useLanguage';
+import jd1 from '/jd1.png';
+import jd2 from '/jd2.png';
+import jd3 from '/jd3.png';
 import { PROJECTS } from '../const';
 import { SandClock } from './elements/SandClock';
 import { Key } from './elements/Key';
@@ -16,7 +18,7 @@ const projects = [
 			en: 'Fully functional online store developed with React and Node.js, it features payment management with Tropipay, authentication with JWT and Google OAuth2, a real-time chat and admin dashboard with data analysis.',
 			es: 'Tienda virtual completamente funcional desarrollada con React y Node.js, cuenta con manejo de pagos con Tropipay, autenticación con JWT y OAuth2 de Google, un chat en tiempo real y panel de control con análisis de datos',
 		},
-		image: javier,
+		images: [jd1, jd2, jd3],
 		tags: [
 			'react',
 			'typescript',

@@ -3,24 +3,30 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { useSkills } from '../../hooks/useSkills';
 import { Skills } from '../../types';
 import { PROJECTS } from '../../const';
+import { useImageViewer } from '../../hooks/useImageViewer';
 
 export function ProjectCard({
 	title,
 	description,
-	image,
+	images,
 	tags,
 	liveUrl,
 	githubUrl,
 }: {
 	title: { en: string; es: string };
 	description: { en: string; es: string };
-	image: string;
+	images: string[];
 	tags: Skills[];
 	liveUrl?: string;
 	githubUrl: string;
 }) {
 	const { language } = useLanguage();
 	const skills = useSkills();
+	const { setImageSet } = useImageViewer();
+
+	const handleViewImage = () => {
+		setImageSet(images);
+	};
 
 	return (
 		<div className='group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1'>
@@ -67,9 +73,14 @@ export function ProjectCard({
 					{/* Image Gallery */}
 					<div className='flex-1 space-y-3'>
 						{/* Main Image */}
-						<div className='relative overflow-hidden rounded-xl border border-gray-200 shadow-md group/img'>
+						<div
+							className='relative overflow-hidden rounded-xl border border-gray-200 shadow-md group/img'
+							onClick={() => {
+								handleViewImage();
+							}}
+						>
 							<img
-								src={image}
+								src={images[0]}
 								alt={title[language]}
 								className='w-full h-auto max-h-[400px] object-cover transition-transform duration-500 group-hover/img:scale-105'
 							/>
@@ -78,16 +89,26 @@ export function ProjectCard({
 
 						{/* Thumbnail Gallery */}
 						<div className='grid grid-cols-2 gap-3'>
-							<div className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'>
+							<div
+								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'
+								onClick={() => {
+									handleViewImage();
+								}}
+							>
 								<img
-									src={image}
+									src={images[1]}
 									alt={title[language]}
 									className='w-full h-32 object-cover transition-transform duration-300 group-hover/thumb:scale-110'
 								/>
 							</div>
-							<div className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'>
+							<div
+								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'
+								onClick={() => {
+									handleViewImage();
+								}}
+							>
 								<img
-									src={image}
+									src={images[2]}
 									alt={title[language]}
 									className='w-full h-32 object-cover transition-transform duration-300 group-hover/thumb:scale-110'
 								/>
