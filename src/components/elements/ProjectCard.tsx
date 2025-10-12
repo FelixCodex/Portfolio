@@ -69,12 +69,12 @@ export function ProjectCard({
 			</div>
 
 			<div className='p-6'>
-				<div className='flex flex-col lg:flex-row gap-6'>
+				<div className='flex flex-col lg:flex-row gap-4'>
 					{/* Image Gallery */}
 					<div className='flex-1 space-y-3'>
 						{/* Main Image */}
 						<div
-							className='relative overflow-hidden rounded-xl border border-gray-200 shadow-md group/img'
+							className='relative overflow-hidden rounded-xl border border-gray-200 shadow-md group/img cursor-pointer'
 							onClick={() => {
 								handleViewImage();
 							}}
@@ -90,7 +90,7 @@ export function ProjectCard({
 						{/* Thumbnail Gallery */}
 						<div className='grid grid-cols-2 gap-3'>
 							<div
-								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'
+								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb cursor-pointer'
 								onClick={() => {
 									handleViewImage();
 								}}
@@ -102,7 +102,7 @@ export function ProjectCard({
 								/>
 							</div>
 							<div
-								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb'
+								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb cursor-pointer'
 								onClick={() => {
 									handleViewImage();
 								}}
