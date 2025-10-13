@@ -18,15 +18,20 @@ export function Footer() {
 	};
 	return (
 		<footer>
-			<div className='bg-blue-00 text-black py-20'>
-				<div className='flex flex-col items-center justify-center p-10 gap-14 sect-container mx-auto'>
-					<h2 className='text-5xl font-semibold title-font'>
+			<div className='relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-black py-20 overflow-hidden'>
+				<div className='absolute inset-0 overflow-hidden pointer-events-none'>
+					<div className='absolute -bottom-28 -left-24 w-96 h-96 bg-blue-200/60 rounded-full blur-3xl'></div>
+					<div className='absolute -bottom-28 -right-24 w-96 h-96 bg-indigo-200/60 rounded-full blur-3xl'></div>
+				</div>
+
+				<div className='z-10 flex flex-col items-center justify-center px-6 sm:px-10 gap-12 sect-container mx-auto max-w-4xl'>
+					<h2 className='text-4xl sm:text-5xl font-semibold title-font text-center leading-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700'>
 						{FOOTER.CONTACT_TITLE[language]}
 					</h2>
-					<div className='flex items-center justify-center gap-8 flex-col md:flex-row'>
+					<div className='flex items-center justify-center gap-6 flex-col md:flex-row w-full md:w-auto'>
 						<button
 							data-id='contact'
-							className='w-48 h-14 relative group overflow-hidden cursor-pointer bg-gradient-nm flex text-lg font-medium items-center justify-center rounded-xl text-white'
+							className='w-48 h-14 relative group overflow-hidden cursor-pointer bg-gradient-nm flex text-lg font-medium items-center justify-center rounded-xl text-white shadow-lg hover:shadow-xl transition-shadow'
 							onMouseMove={handleMouseMove}
 							onClick={navigatePage}
 						>
@@ -34,18 +39,19 @@ export function Footer() {
 								className='bg-gradient-foot w-[100%] h-full group-hover:opacity-100 opacity-0 absolute top-0 right-0 transition-opacity-2'
 								style={{ transform: `translateX(${posx}px)` }}
 							></span>
-							<span className='z-10'>{FOOTER.CONTACT[language]}</span>
+							<span className='z-20'>{FOOTER.CONTACT[language]}</span>
 						</button>
-						<p className='flex gap-2'>
-							<Check className='w-9 h-9'></Check>
-							<span className='text-2xl font-medium'>
+						<p className='flex items-center gap-3 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-lg shadow-sm'>
+							<Check className='w-8 h-8 text-green-500'></Check>
+							<span className='text-xl font-semibold text-gray-700'>
 								{FOOTER.AVAILABLE[language]}
 							</span>
 						</p>
 					</div>
 				</div>
 			</div>
-			<div className='bg-gray-900 text-white py-8'>
+
+			<div className='bg-gray-900 text-white py-8 z-50'>
 				<div className='sect-container mx-auto px-4'>
 					<div className='flex p-5 md:p-10 gap-6 md:gap-0 w-full justify-between flex-col md:flex-row'>
 						<div className='flex flex-col gap-4'>

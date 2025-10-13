@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
-import { ABOUT } from '../const';
+import { ABOUT, JOURNEY } from '../const';
 import { useObserver } from '../hooks/useObserver';
 
 function Step({ text }: { text?: ReactNode }) {
@@ -11,9 +11,9 @@ function Step({ text }: { text?: ReactNode }) {
 						 transition-[outline,background-color,padding,border,box-shadow,transform]`}
 		>
 			<p className='p-4 relative rounded-xl z-20 bg-transparent border-2 border-gray-300 group-hover:border-transparent transition-[border]'>
+				<div className='w-full h-full absolute top-0 left-0 -z-10 bg-white rounded-[10px] group-hover:rounded-[.625rem] transition-[border-radius]'></div>
 				{text}
 			</p>
-			<div className='absolute top-[0.125rem] left-[0.125rem] w-[calc(100%-0.25rem)] h-[calc(100%-0.25rem)] bg-white rounded-lg group-hover:rounded-[.625rem] transition-[border-radius]'></div>
 		</div>
 	);
 }
@@ -46,146 +46,6 @@ function Quarter({ year }: { year?: string }) {
 function Divisor() {
 	return <div className='w-full h-full bg-fuchsia-50'></div>;
 }
-
-const linkClass = 'text-blue-500 hover:text-blue-600 transition-colors';
-
-const journey = {
-	end2023: {
-		es: (
-			<>
-				Inicié mi aprendizaje en programación con el lenguaje Java a finales de
-				2023, utilizando recursos como{' '}
-				<a
-					href='https://www.youtube.com/@pildorasinformaticas'
-					className={linkClass}
-					target='_blank'
-				>
-					Programación ATS
-				</a>{' '}
-				y{' '}
-				<a
-					href='https://www.youtube.com/@pildorasinformaticas'
-					target='_blank'
-					className={linkClass}
-				>
-					Píldoras Informáticas
-				</a>
-				. Este primer acercamiento me permitió desarrollar las bases de la
-				lógica de programación y adquirir una comprensión sólida de los
-				conceptos fundamentales.
-			</>
-		),
-		en: (
-			<>
-				I began my programming experience with Java at the end of 2023, using
-				resources such as{' '}
-				<a
-					href='https://www.youtube.com/channel/UC7QoKU6bj1QbXQuNIjan82Q'
-					className={linkClass}
-					target='_blank'
-				>
-					Programación ATS
-				</a>{' '}
-				and{' '}
-				<a
-					href='https://www.youtube.com/@pildorasinformaticas'
-					className={linkClass}
-					target='_blank'
-				>
-					Píldoras Informáticas
-				</a>
-				. This initial introduction allowed me to develop the foundations of
-				programming logic and acquire a solid understanding of the fundamental
-				concepts.
-			</>
-		),
-	},
-	first_mid2024: {
-		es: (
-			<>
-				Amplié mis conocimientos en desarrollo web con{' '}
-				<a
-					href='https://www.youtube.com/@soydalto'
-					className={linkClass}
-					target='_blank'
-				>
-					SoyDalto
-				</a>{' '}
-				y exploré herramientas como Spring Boot, MySQL y WebSockets. Durante
-				esta etapa, realicé mis primeros proyectos prácticos, aplicando lo
-				aprendido para construir aplicaciones web interactivas y dinámicas.
-			</>
-		),
-		en: (
-			<>
-				I expanded my web development knowledge with{' '}
-				<a
-					href='https://www.youtube.com/@soydalto'
-					className={linkClass}
-					target='_blank'
-				>
-					SoyDalto
-				</a>{' '}
-				and explored tools such as Spring Boot, MySQL, and WebSockets. During
-				this time, I completed my first practical projects, applying what I
-				learned to build interactive and dynamic web applications.
-			</>
-		),
-	},
-	sec_mid2024: {
-		es: (
-			<>
-				Me adentré en frameworks modernos como React y en tecnologías de apoyo
-				como Tailwind CSS, Vite, Node.js, Express y TypeScript con{' '}
-				<a
-					href='https://www.youtube.com/@midulive'
-					className={linkClass}
-					target='_blank'
-				>
-					Midudev
-				</a>
-				. Este periodo me ayudó a fortalecer mis habilidades en el desarrollo de
-				interfaces de usuario modernas y aplicaciones web escalables y
-				eficientes.
-			</>
-		),
-		en: (
-			<>
-				I delved into modern frameworks like React and supporting technologies
-				such as Tailwind CSS, Vite, Node.js, Express, and TypeScript with{' '}
-				<a
-					href='https://www.youtube.com/@midulive'
-					className={linkClass}
-					target='_blank'
-				>
-					Midudev
-				</a>
-				. This period helped me strengthen my skills in developing modern user
-				interfaces and scalable and efficient web applications.
-			</>
-		),
-	},
-	start2025: {
-		es: (
-			<>
-				Desarrollé un e-commerce completo, donde profundicé en aspectos como la
-				integración de pagos, el despliegue de aplicaciones mediante GitHub y el
-				manejo de autenticación con Google. También implementé funcionalidades
-				en tiempo real, como chats interactivos, y aprendí a utilizar SQLite
-				para el almacenamiento de datos.
-			</>
-		),
-		en: (
-			<>
-				I developed a complete e-commerce platform, where I delved into aspects
-				such as payment integration, application deployment via GitHub, and
-				Google authentication management. I also implemented real-time features
-				such as interactive chats and learned how to use SQLite for data
-				storage.
-			</>
-		),
-	},
-};
 
 const stepClass =
 	'relative group flex flex-col-reverse items-start md:items-end md:flex-row gap-5';
@@ -232,7 +92,7 @@ export default function About() {
 							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q3-Q4' />
 								<div className='flex flex-col gap-8'>
-									<Step text={journey.end2023[language]}></Step>
+									<Step text={JOURNEY.end2023[language]}></Step>
 								</div>
 							</div>
 							<div className={stepClass + 'my-4'}>
@@ -242,13 +102,13 @@ export default function About() {
 							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q1-Q2' />
 								<div className='flex flex-col gap-8'>
-									<Step text={journey.first_mid2024[language]}></Step>
+									<Step text={JOURNEY.first_mid2024[language]}></Step>
 								</div>
 							</div>
 							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q3-Q4' />
 								<div className='flex flex-col gap-8'>
-									<Step text={journey.sec_mid2024[language]}></Step>
+									<Step text={JOURNEY.sec_mid2024[language]}></Step>
 								</div>
 							</div>
 							<div className={stepClass + 'my-4'}>
@@ -258,7 +118,7 @@ export default function About() {
 							<div className={stepClass + ' hidder'}>
 								<Quarter year='Q1' />
 								<div className='flex flex-col gap-8'>
-									<Step text={journey.start2025[language]}></Step>
+									<Step text={JOURNEY.start2025[language]}></Step>
 								</div>
 							</div>
 						</div>

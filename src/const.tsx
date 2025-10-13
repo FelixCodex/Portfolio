@@ -115,3 +115,143 @@ export const ABOUT = {
 		en: `As a web developer, I am committed to continuous learning and creating technological solutions that positively impact users.`,
 	},
 };
+
+const linkClass = 'text-blue-500 hover:text-blue-600 transition-colors';
+
+export const JOURNEY = {
+	end2023: {
+		es: (
+			<>
+				Inicié mi aprendizaje en programación con el lenguaje Java a finales de
+				2023, utilizando recursos como{' '}
+				<a
+					href='https://www.youtube.com/@pildorasinformaticas'
+					className={linkClass}
+					target='_blank'
+				>
+					Programación ATS
+				</a>{' '}
+				y{' '}
+				<a
+					href='https://www.youtube.com/@pildorasinformaticas'
+					target='_blank'
+					className={linkClass}
+				>
+					Píldoras Informáticas
+				</a>
+				. Este primer acercamiento me permitió desarrollar las bases de la
+				lógica de programación y adquirir una comprensión sólida de los
+				conceptos fundamentales.
+			</>
+		),
+		en: (
+			<>
+				I began my programming experience with Java at the end of 2023, using
+				resources such as{' '}
+				<a
+					href='https://www.youtube.com/channel/UC7QoKU6bj1QbXQuNIjan82Q'
+					className={linkClass}
+					target='_blank'
+				>
+					Programación ATS
+				</a>{' '}
+				and{' '}
+				<a
+					href='https://www.youtube.com/@pildorasinformaticas'
+					className={linkClass}
+					target='_blank'
+				>
+					Píldoras Informáticas
+				</a>
+				. This initial introduction allowed me to develop the foundations of
+				programming logic and acquire a solid understanding of the fundamental
+				concepts.
+			</>
+		),
+	},
+	first_mid2024: {
+		es: (
+			<>
+				Amplié mis conocimientos en desarrollo web con{' '}
+				<a
+					href='https://www.youtube.com/@soydalto'
+					className={linkClass}
+					target='_blank'
+				>
+					SoyDalto
+				</a>{' '}
+				y exploré herramientas como Spring Boot, MySQL y WebSockets. Durante
+				esta etapa, realicé mis primeros proyectos prácticos, aplicando lo
+				aprendido para construir aplicaciones web interactivas y dinámicas.
+			</>
+		),
+		en: (
+			<>
+				I expanded my web development knowledge with{' '}
+				<a
+					href='https://www.youtube.com/@soydalto'
+					className={linkClass}
+					target='_blank'
+				>
+					SoyDalto
+				</a>{' '}
+				and explored tools such as Spring Boot, MySQL, and WebSockets. During
+				this time, I completed my first practical projects, applying what I
+				learned to build interactive and dynamic web applications.
+			</>
+		),
+	},
+	sec_mid2024: {
+		es: (
+			<>
+				Me adentré en frameworks modernos como React y en tecnologías de apoyo
+				como Tailwind CSS, Vite, Node.js, Express y TypeScript con{' '}
+				<a
+					href='https://www.youtube.com/@midulive'
+					className={linkClass}
+					target='_blank'
+				>
+					Midudev
+				</a>
+				. Este periodo me ayudó a fortalecer mis habilidades en el desarrollo de
+				interfaces de usuario modernas y aplicaciones web escalables y
+				eficientes.
+			</>
+		),
+		en: (
+			<>
+				I delved into modern frameworks like React and supporting technologies
+				such as Tailwind CSS, Vite, Node.js, Express, and TypeScript with{' '}
+				<a
+					href='https://www.youtube.com/@midulive'
+					className={linkClass}
+					target='_blank'
+				>
+					Midudev
+				</a>
+				. This period helped me strengthen my skills in developing modern user
+				interfaces and scalable and efficient web applications.
+			</>
+		),
+	},
+	start2025: {
+		es: (
+			<>
+				Desarrollé un e-commerce completo, donde profundicé en aspectos como la
+				integración de pagos, el despliegue de aplicaciones mediante GitHub y el
+				manejo de autenticación con Google. También implementé funcionalidades
+				en tiempo real, como chats interactivos, y aprendí a utilizar SQLite
+				para el almacenamiento de datos.
+			</>
+		),
+		en: (
+			<>
+				I developed a complete e-commerce platform, where I delved into aspects
+				such as payment integration, application deployment via GitHub, and
+				Google authentication management. I also implemented real-time features
+				such as interactive chats and learned how to use SQLite for data
+				storage.
+			</>
+		),
+	},
+};
