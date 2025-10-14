@@ -69,9 +69,6 @@ export default function About() {
 					<p className='text-lg font-medium md:font-normal md:text-2xl text-gray-700'>
 						{ABOUT.IM_2[language]}
 					</p>
-					<p className='text-lg font-medium md:font-normal md:text-2xl text-gray-700'>
-						{ABOUT.IM_3[language]}
-					</p>
 				</div>
 				<div className='p-4 md:p-12 flex flex-col md:flex-row w-full items-start h-fit justify-between gap-8'>
 					<div className='w-full md:w-96 mb-6 flex flex-col gap-20 hidder'>

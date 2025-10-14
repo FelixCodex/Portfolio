@@ -34,7 +34,7 @@ export const FOOTER = {
 	CONTACT: { es: 'Contactame ahora', en: 'Contact me now' },
 	CONTACT_TITLE: {
 		es: 'TE INTERESA LO QUE VES?',
-		en: 'DO YOU LIKE WHAT YOU SEE',
+		en: 'DO YOU LIKE WHAT YOU SEE?',
 	},
 	AVAILABLE: { es: 'Estoy disponible!', en: 'I am available!' },
 	READY: { es: 'Listo para trabajar contigo', en: 'Ready to work with you' },
@@ -90,16 +90,6 @@ export const ABOUT = {
 			implementación de soluciones tecnológicas eficientes.`,
 	},
 	IM_2: {
-		en: `I'm a developer passionate about learning and applying new 
-			technologies. I'm motivated by the idea of creating solutions that 
-			make a difference, combining design and functionality to deliver 
-			memorable experiences.`,
-		es: `Soy un desarrollador apasionado por aprender y aplicar nuevas
-			tecnologías. Me motiva la idea de crear soluciones que marquen la
-			diferencia, combinando diseño y funcionalidad para ofrecer
-			experiencias memorables.`,
-	},
-	IM_3: {
 		en: `Currently, I'm strengthening my knowledge and working on real-life 
 		projects to continue growing professionally and consolidating my skills 
 		in web and mobile development. I love learning from every challenge and 
