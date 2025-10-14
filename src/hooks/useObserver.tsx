@@ -9,7 +9,6 @@ export function useObserver() {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('appear');
-					console.log('ASD');
 					observer.unobserve(entry.target);
 				}
 			});

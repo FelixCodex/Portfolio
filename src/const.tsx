@@ -66,6 +66,12 @@ export const CONTACT = {
 		en: `I'd like to know what you have to say`,
 	},
 	SEND: { es: 'Enviar mensaje', en: 'Send Message' },
+	RESULT_SUCCESS: { es: 'Mensaje enviado!', en: 'Message Sent!' },
+	RESULT_FAILED: {
+		es: 'Ha ocurrido un error al enviar el mensaje',
+		en: 'An error occurred while sending the message',
+	},
+	RESULT_LOADING: { es: 'Enviando mensaje...', en: 'Sending Message...' },
 };
 export const ABOUT = {
 	WHO: { es: 'Quién soy?', en: 'Who I am?' },

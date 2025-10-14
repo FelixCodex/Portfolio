@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { XIcon, LucideAlignJustify } from 'lucide-react';
+import {
+	XIcon,
+	LucideAlignJustify,
+	Home,
+	UserCircle2,
+	Mail,
+} from 'lucide-react';
 import { Logo } from './elements/Logo';
 import { useLanguage } from '../hooks/useLanguage';
 import { PAGES } from '../const';
@@ -94,27 +100,27 @@ export function Header() {
 							bool ? 'max-h-96' : 'max-h-0'
 						} transition-[max-height] duration-500 ease-in-out md:max-h-0 overflow-hidden w-full`}
 					>
-						<div className='flex flex-col justify-start w-full gap-4 px-2 pb-5 pt-3'>
+						<div className='flex flex-col justify-end w-full gap-4 px-2 pb-5 pt-3'>
 							<p
 								data-id=''
-								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
+								className='hover:text-blue-500 text-lg flex items-center gap-2 justify-end font-medium cursor-pointer transition-colors'
 								onClick={handlerClickMobileLink}
 							>
-								{PAGES.HOME[language]}
+								<span>{PAGES.HOME[language]}</span> <Home />
 							</p>
 							<p
 								data-id='about'
-								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
+								className='hover:text-blue-500 text-lg flex items-center gap-2 justify-end font-medium cursor-pointer transition-colors'
 								onClick={handlerClickMobileLink}
 							>
-								{PAGES.ABOUT[language]}
+								<span>{PAGES.ABOUT[language]}</span> <UserCircle2 />
 							</p>
 							<p
 								data-id='contact'
-								className='hover:text-blue-500 text-lg font-medium cursor-pointer transition-colors'
+								className='hover:text-blue-500 text-lg flex items-center gap-2 justify-end font-medium cursor-pointer transition-colors'
 								onClick={handlerClickMobileLink}
 							>
-								{PAGES.CONTACT[language]}
+								<span>{PAGES.CONTACT[language]}</span> <Mail />
 							</p>
 						</div>
 					</div>

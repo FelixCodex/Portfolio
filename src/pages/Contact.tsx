@@ -1,8 +1,9 @@
-import { Facebook, Github, Linkedin, Mail } from 'lucide-react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Facebook, Github, Linkedin, Mail, X } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { CONTACT } from '../const';
 import { useObserver } from '../hooks/useObserver';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const iClass =
 	'w-7 h-7 text-blue-600 group-hover:scale-[140%] transition-transform';
@@ -11,10 +12,34 @@ const sClass =
 
 export default function Contact() {
 	const { language } = useLanguage();
+	const [data, setData] = useState({ name: '', email: '', message: '' });
+	const [success, setSuccess] = useState<boolean | null>(null);
+	const [loading, setLoading] = useState<boolean>(false);
 	const observe = useObserver();
 	useEffect(() => {
 		observe();
 	}, []);
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setLoading(true);
+		try {
+			const res = await fetch('https://worker-test.josefelixlr05.workers.dev', {
+				method: 'POST',
+				body: JSON.stringify(data),
+			});
+			console.log(res.status);
+			if (res.status === 200) {
+				setSuccess(true);
+			} else {
+				setSuccess(false);
+			}
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	return (
 		<section
@@ -23,12 +48,15 @@ export default function Contact() {
 		>
 			<div className='sect-container relative mx-auto flex items-center justify-center px-4 pt-32 pb-24 md:pt-[12rem] md:pb-[11.25rem] hidder'>
 				<div className='w-full max-w-[64rem] p-3 md:p-12'>
-					<h2 className='text-4xl md:text-6xl text-gray-900 font-medium text-start mb-12'>
+					<h2 className='text-4xl md:text-6xl text-gray-800 font-medium text-start mb-12'>
 						{CONTACT.TITLE[language]}
 					</h2>
 					<div className='grid md:grid-cols-2 gap-12'>
 						<div className='rainbow-border rounded-xl p-[.125rem]'>
-							<form className='space-y-4 bg-white p-4 rounded-[.625rem]'>
+							<form
+								className='space-y-4 bg-white p-4 rounded-[.625rem]'
+								onSubmit={handleSubmit}
+							>
 								<div>
 									<label
 										htmlFor='name'
@@ -39,7 +67,12 @@ export default function Contact() {
 									<input
 										type='text'
 										id='name'
-										className='w-full px-4 py-2 border-2 border-gray-200 rounded-lg outline-none focus:border-blue-600 transition-colors duration-300'
+										value={data.name}
+										onChange={e => {
+											setData({ ...data, name: e.target.value });
+										}}
+										required
+										className='w-full px-4 py-2 border-2 font-medium text-gray-700 border-gray-200 rounded-lg outline-none focus:border-blue-600 transition-colors duration-300'
 										placeholder={CONTACT.NAME_PLACEHOLDER[language]}
 									/>
 								</div>
@@ -53,7 +86,12 @@ export default function Contact() {
 									<input
 										type='email'
 										id='email'
-										className='w-full px-4 py-2 border-2 border-gray-200 rounded-lg outline-none focus:border-blue-600 transition-colors duration-300'
+										value={data.email}
+										onChange={e => {
+											setData({ ...data, email: e.target.value });
+										}}
+										required
+										className='w-full px-4 py-2 border-2 font-medium text-gray-700 border-gray-200 rounded-lg outline-none focus:border-blue-600 transition-colors duration-300'
 										placeholder={CONTACT.EMAIL_PLACEHOLDER[language]}
 									/>
 								</div>
@@ -67,7 +105,12 @@ export default function Contact() {
 									<textarea
 										id='message'
 										rows={4}
-										className='w-full px-4 py-2 border-2 border-gray-200 rounded-lg outline-none focus:border-blue-600 transition-colors duration-300'
+										value={data.message}
+										onChange={e => {
+											setData({ ...data, message: e.target.value });
+										}}
+										required
+										className='w-full px-4 py-2 border-2 font-medium text-gray-700 border-gray-200 rounded-lg outline-none focus:border-blue-600 transition-colors duration-300'
 										placeholder={CONTACT.MESSAGE_PLACEHOLDER[language]}
 									></textarea>
 								</div>
@@ -77,6 +120,55 @@ export default function Contact() {
 								>
 									{CONTACT.SEND[language]}
 								</button>
+								<div
+									className={`w-full flex ${
+										loading
+											? ' bg-blue-200 border-blue-400'
+											: success != null
+											? success
+												? 'bg-green-200 border-green-400'
+												: 'bg-red-200 border-red-400'
+											: 'hidden'
+									} rounded-lg border-2 justify-between items-center p-2`}
+								>
+									<p
+										className={`${
+											loading
+												? ' text-blue-600'
+												: success != null
+												? success
+													? 'flex text-green-600'
+													: 'flex text-red-600'
+												: ''
+										} font-medium pl-2`}
+									>
+										{loading
+											? `${CONTACT.RESULT_LOADING[language]}`
+											: success != null
+											? success
+												? `${CONTACT.RESULT_SUCCESS[language]}`
+												: `${CONTACT.RESULT_LOADING[language]}`
+											: ''}
+									</p>
+									<button
+										className={`flex ${
+											loading
+												? 'hover:bg-blue-300 text-blue-600'
+												: success != null
+												? success
+													? 'hover:bg-green-300 text-green-600'
+													: 'hover:bg-red-300 text-red-600'
+												: ''
+										} rounded-lg p-1`}
+										onClick={e => {
+											e.preventDefault();
+											setSuccess(null);
+											setLoading(false);
+										}}
+									>
+										<X className='h-6 w-6' />
+									</button>
+								</div>
 							</form>
 						</div>
 						<div className='space-y-6 md:pl-24'>
