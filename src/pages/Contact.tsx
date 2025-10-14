@@ -24,10 +24,13 @@ export default function Contact() {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const res = await fetch('https://worker-test.josefelixlr05.workers.dev', {
-				method: 'POST',
-				body: JSON.stringify(data),
-			});
+			const res = await fetch(
+				'https://portfolio-email-redirect-worker.josefelixlr05.workers.dev',
+				{
+					method: 'POST',
+					body: JSON.stringify(data),
+				}
+			);
 			console.log(res.status);
 			if (res.status === 200) {
 				setSuccess(true);
@@ -36,6 +39,7 @@ export default function Contact() {
 			}
 		} catch (error) {
 			console.log(error);
+			setSuccess(false);
 		} finally {
 			setLoading(false);
 		}
