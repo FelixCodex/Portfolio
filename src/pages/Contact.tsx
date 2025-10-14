@@ -151,7 +151,7 @@ export default function Contact() {
 											: success != null
 											? success
 												? `${CONTACT.RESULT_SUCCESS[language]}`
-												: `${CONTACT.RESULT_LOADING[language]}`
+												: `${CONTACT.RESULT_FAILED[language]}`
 											: ''}
 									</p>
 									<button
