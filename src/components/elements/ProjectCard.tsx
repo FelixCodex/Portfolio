@@ -30,7 +30,7 @@ export function ProjectCard({
 
 	return (
 		<div className='group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1'>
-			<div className='relative bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200'>
+			<div className='relative bg-gradient-to-r from-gray-50 to-gray-100 px-3 lg:px-6 py-4 border-b border-gray-200'>
 				<div className='flex items-center justify-between'>
 					<div className='flex items-center gap-3'>
 						<div className='p-2 bg-white rounded-lg shadow-sm border border-gray-200 group-hover:border-green-400 transition-colors'>
@@ -68,7 +68,7 @@ export function ProjectCard({
 				<div className='absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
 			</div>
 
-			<div className='p-6'>
+			<div className='p-3 lg:p-6'>
 				<div className='flex flex-col lg:flex-row gap-4'>
 					{/* Image Gallery */}
 					<div className='flex-1 space-y-3'>
