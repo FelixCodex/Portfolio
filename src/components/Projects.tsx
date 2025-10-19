@@ -40,6 +40,7 @@ const small_projects = [
 		icon: <Key className='text-blue-500 h-5 w-5' />,
 		link: 'https://easepassword.pages.dev/',
 		github: 'https://github.com/FelixCodex/EasePassword',
+		tags: ['react', 'typescript', 'tailwind'] as Skills[],
 	},
 	{
 		title: { en: 'ProductyFlow', es: 'ProductyFlow' },
@@ -50,6 +51,14 @@ const small_projects = [
 		icon: <CheckCircle2 className='text-[#4f46e5] h-5 w-5' />,
 		link: 'https://localproductyflow.pages.dev/',
 		github: 'https://github.com/FelixCodex/ProductyFlow',
+		tags: [
+			'html',
+			'css',
+			'javascript',
+			'java',
+			'springboot',
+			'mysql',
+		] as Skills[],
 	},
 	{
 		title: { en: 'Krono', es: 'Krono' },
@@ -57,6 +66,7 @@ const small_projects = [
 		icon: <SandClock className='text-blue-500 h-5 w-5' />,
 		link: 'https://krono.pages.dev/',
 		github: 'https://github.com/FelixCodex/Krono',
+		tags: ['react', 'typescript', 'tailwind'] as Skills[],
 	},
 ];
 

@@ -13,3 +13,5 @@ export type Skills =
 	| 'sqlite'
 	| 'tailwind'
 	| 'typescript';
+
+export type sizeTypes = 'normal' | 'small';

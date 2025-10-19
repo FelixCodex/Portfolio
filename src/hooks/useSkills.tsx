@@ -10,11 +10,17 @@ import { SpringBoot } from '../components/icons/SpringBoot';
 import { SQLite } from '../components/icons/SQLite';
 import { Tailwind } from '../components/icons/Tailwind';
 import { Typescript } from '../components/icons/Typescript';
+import { sizeTypes } from '../types';
 
-const iClass =
-	'w-14 h-14 min-h-14 min-w-14 md:min-h-20 md:min-w-20 shadow-md bg-white transition-transform shadow-gray-200 border border-gray-300 rounded-lg sm:rounded-xl p-1 sm:p-2';
+const classIcon =
+	'shadow-md bg-white transition-transform shadow-gray-200 border border-gray-300 p-1 sm:p-2';
+const sizeNormal =
+	'w-14 h-14 min-h-14 min-w-14 md:min-h-16 md:min-w-16 p-1 sm:p-2 rounded-lg sm:rounded-xl';
+const sizeSmall =
+	'w-8 h-8 md:min-h-8 md:min-w-8 sm:p-1 rounded-md sm:rounded-lg';
 
-export function useSkills() {
+export function useSkills(size: sizeTypes = 'normal') {
+	const iClass = `${classIcon} ${size == 'small' ? sizeSmall : sizeNormal}`;
 	return {
 		html: <HTML5 className={iClass + ' border-orange-300'} />,
 		css: <CSS3 className={iClass + ' border-sky-300'} />,
