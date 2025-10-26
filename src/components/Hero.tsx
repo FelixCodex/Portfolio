@@ -14,7 +14,7 @@ export function Hero() {
 		<section className='bg-[--bg_pri] min-h-screen'>
 			<div className='sect-container mx-auto flex h-full flex-col items-center px-4 hidder'>
 				<div className='max-w-[51.125rem] pt-[37%] pb-[15.68%] md:pt-[26.26%] md:pb-[12.68%] px-4 flex items-center gap-8 flex-col'>
-					<h1 className='text-5xl sm:text-6xl md:text-7xl font-bold text-center text-gray-950'>
+					<h1 className='text-4xl min-[560px]:text-5xl sm:text-6xl md:text-7xl font-bold text-center text-gray-900 md:text-gray-950'>
 						{HERO.TITLE[language]}
 					</h1>
 					<p className='text-lg md:text-xl font-medium text-center text-gray-700'>

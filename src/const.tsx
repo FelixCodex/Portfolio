@@ -5,8 +5,8 @@ export const PAGES = {
 };
 export const HERO = {
 	TITLE: {
-		es: 'Desarrollador Frontend con mucha Pasión',
-		en: 'Frontend Developer with Passion',
+		es: 'Desarrollador Frontend Moderno',
+		en: 'Modern Frontend Developer',
 	},
 	DESCRIPTION: {
 		es: 'Hola, soy José Felix. Con 2 años de experiencia en desarrollo web, me especializo en crear aplicaciones responsivas e intuitivas con tecnologías modernas.',

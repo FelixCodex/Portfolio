@@ -49,7 +49,9 @@ export function Header() {
 					<div className='w-full relative flex justify-center h-16'>
 						<div className='flex absolute left-0 top-[calc(50%-0.875rem)] items-center gap-2 name-logo'>
 							<Logo className='h-7 w-7'></Logo>
-							<span className='text-xl font-bold'>Jose Felix</span>
+							<span className='text-gray-950 text-xl font-bold'>
+								José Felix
+							</span>
 						</div>
 						<div className='flex items-center gap-6 links-mobile'>
 							<p
