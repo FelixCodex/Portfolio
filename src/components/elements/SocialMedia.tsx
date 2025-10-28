@@ -9,7 +9,7 @@ export function SocialMedia() {
 		<>
 			<div className='flex items-center gap-2'>
 				<a
-					href='https://cu.linkedin.com/in/jos%C3%A9-felix-lorenzo-rodr%C3%ADguez-b747b6328'
+					href='https://www.linkedin.com/in/josé-felix-lr'
 					className={aClass + ' ml-3'}
 					aria-label='Linkedin'
 				>

@@ -195,7 +195,7 @@ export default function Contact() {
 							</a>
 							<a
 								className='flex items-center gap-5 group'
-								href='https://cu.linkedin.com/in/jos%C3%A9-felix-lorenzo-rodr%C3%ADguez-b747b6328'
+								href='https://www.linkedin.com/in/josé-felix-lr'
 							>
 								<Linkedin className={iClass} />
 								<span className={sClass}>Linkedin</span>
