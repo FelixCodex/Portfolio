@@ -60,14 +60,14 @@ const small_projects = [
 			'mysql',
 		] as Skills[],
 	},
-	{
-		title: { en: 'Krono', es: 'Krono' },
-		subtitle: { en: 'Cronometer', es: 'Cronometer' },
-		icon: <SandClock className='text-blue-500 h-5 w-5' />,
-		link: 'https://krono.pages.dev/',
-		github: 'https://github.com/FelixCodex/Krono',
-		tags: ['react', 'typescript', 'tailwind'] as Skills[],
-	},
+	// {
+	// 	title: { en: 'Krono', es: 'Krono' },
+	// 	subtitle: { en: 'Cronometer', es: 'Cronometer' },
+	// 	icon: <SandClock className='text-blue-500 h-5 w-5' />,
+	// 	link: 'https://krono.pages.dev/',
+	// 	github: 'https://github.com/FelixCodex/Krono',
+	// 	tags: ['react', 'typescript', 'tailwind'] as Skills[],
+	// },
 ];
 
 export function Projects() {
