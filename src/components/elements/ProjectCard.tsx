@@ -1,7 +1,7 @@
 import { ExternalLink, Github, LockIcon } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useSkills } from '../../hooks/useSkills';
-import { Skills } from '../../types';
+import { Project } from '../../types';
 import { PROJECTS } from '../../const';
 import { useImageViewer } from '../../hooks/useImageViewer';
 
@@ -12,24 +12,18 @@ export function ProjectCard({
 	tags,
 	liveUrl,
 	githubUrl,
-}: {
-	title: { en: string; es: string };
-	description: { en: string; es: string };
-	images: string[];
-	tags: Skills[];
-	liveUrl?: string;
-	githubUrl: string;
-}) {
+}: Project) {
 	const { language } = useLanguage();
 	const skills = useSkills();
-	const { setImageSet } = useImageViewer();
+	const { setImageSet, setStarterIndex } = useImageViewer();
 
-	const handleViewImage = () => {
+	const handleViewImage = (starter?: number) => {
+		if (starter != undefined) setStarterIndex(starter);
 		setImageSet(images);
 	};
 
 	return (
-		<div className='group relative overflow-hidden rounded-2xl bg-white shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1'>
+		<div className='group relative overflow-hidden rounded-2xl bg-white shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1'>
 			<div className='relative bg-gradient-to-r from-gray-50 to-gray-100 px-3 lg:px-6 py-4 border-b border-gray-200'>
 				<div className='flex items-center justify-between'>
 					<div className='flex items-center gap-3'>
@@ -76,7 +70,7 @@ export function ProjectCard({
 						<div
 							className='relative overflow-hidden rounded-xl border border-gray-200 shadow-md group/img cursor-pointer'
 							onClick={() => {
-								handleViewImage();
+								handleViewImage(0);
 							}}
 						>
 							<img
@@ -92,7 +86,7 @@ export function ProjectCard({
 							<div
 								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb cursor-pointer'
 								onClick={() => {
-									handleViewImage();
+									handleViewImage(1);
 								}}
 							>
 								<img
@@ -104,7 +98,7 @@ export function ProjectCard({
 							<div
 								className='relative overflow-hidden rounded-lg border border-gray-200 shadow-sm group/thumb cursor-pointer'
 								onClick={() => {
-									handleViewImage();
+									handleViewImage(2);
 								}}
 							>
 								<img

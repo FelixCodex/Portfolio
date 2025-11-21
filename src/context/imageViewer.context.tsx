@@ -2,7 +2,9 @@ import { createContext, useState } from 'react';
 
 interface ImageViewerContextType {
 	imageSet: string[] | null;
-	setImageSet: (val: string[] | null) => void;
+	setImageSet: (val: string[] | null, startIndex?: number) => void;
+	starterIndex: number;
+	setStarterIndex: (n: number) => void;
 }
 
 interface ImageViewerProviderProps {
@@ -12,11 +14,17 @@ interface ImageViewerProviderProps {
 export const ImageViewerContext = createContext<ImageViewerContextType>({
 	imageSet: null,
 	setImageSet: () => {},
+	starterIndex: 0,
+	setStarterIndex: n => {
+		console.log(n);
+	},
 });
 
 export function ImageViewerProvider({ children }: ImageViewerProviderProps) {
 	const [imageSet, setImages] = useState<string[] | null>(null);
-	const setImageSet = (val: string[] | null) => {
+	const [starterIndex, setStarterIndex] = useState<number>(0);
+	const setImageSet = (val: string[] | null, startIndex?: number) => {
+		if (startIndex != undefined) setStarterIndex(startIndex);
 		setImages(val);
 	};
 
@@ -25,6 +33,8 @@ export function ImageViewerProvider({ children }: ImageViewerProviderProps) {
 			value={{
 				imageSet,
 				setImageSet,
+				starterIndex,
+				setStarterIndex,
 			}}
 		>
 			{children}
