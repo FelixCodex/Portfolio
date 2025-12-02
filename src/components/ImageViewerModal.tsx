@@ -36,7 +36,7 @@ export function ImageViewerModal() {
 	// Reset index when imageSet changes
 	useEffect(() => {
 		setCurrentIndex(starterIndex);
-	}, [imageSet]);
+	}, [imageSet, starterIndex]);
 
 	if (!imageSet || imageSet.length === 0) return null;
 
@@ -55,7 +55,7 @@ export function ImageViewerModal() {
 				handleClose();
 			}}
 		>
-			<button className='absolute bottom-20 lg:bottom-auto lg:top-20 xl:top-16 w-16 h-14 flex items-center justify-center bg-gray-900 hover:bg-gray-800 transition-colors rounded-xl text-white text-3xl font-bold'>
+			<button className='absolute bottom-20 lg:bottom-auto lg:top-20 xl:top-16 w-16 h-14 border-2 border-gray-400 flex items-center justify-center bg-gray-900 hover:bg-gray-800 transition-colors rounded-xl text-white text-3xl font-bold'>
 				<X className='w-6 h-6' />
 			</button>
 			{currentIndex > 0 && (
@@ -64,13 +64,13 @@ export function ImageViewerModal() {
 						e.stopPropagation();
 						handlePrev();
 					}}
-					className='absolute bottom-20 lg:bottom-auto left-6 w-8 h-14 flex items-center justify-center bg-gray-900 hover:bg-gray-800 transition-colors rounded-xl text-white text-3xl font-bold'
+					className='absolute bottom-20 lg:bottom-auto left-6 w-8 h-14 border-2 border-gray-400 flex items-center justify-center bg-gray-900 hover:bg-gray-800 transition-colors rounded-xl text-white text-3xl font-bold'
 				>
 					<ChevronLeft className='w-6 h-6' />
 				</button>
 			)}
 			<div
-				className='w-full px-4 lg:w-3/4 max-h-[720px] flex justify-center'
+				className='w-full px-2 lg:px-4 flex justify-center '
 				onClick={e => {
 					e.stopPropagation();
 				}}
@@ -78,7 +78,7 @@ export function ImageViewerModal() {
 				<img
 					src={imageSet && imageSet[currentIndex]}
 					alt={`ImageViewer${currentIndex + 1}`}
-					className='w-full h-auto object-cover rounded-2xl border-2 border-gray-900 shadow-xl shadow-gray-700'
+					className='w-full h-full rounded-2xl border-2 border-gray-900 shadow-xl shadow-gray-800'
 				/>
 			</div>
 			{currentIndex < imageSet.length - 1 && (
@@ -87,7 +87,7 @@ export function ImageViewerModal() {
 						e.stopPropagation();
 						handleNext();
 					}}
-					className='absolute bottom-20 lg:bottom-auto right-6 w-8 h-14 flex items-center justify-center bg-gray-900 hover:bg-gray-800 transition-colors rounded-xl text-white text-3xl font-bold'
+					className='absolute bottom-20 lg:bottom-auto right-6 w-8 h-14 border-2 border-gray-400 flex items-center justify-center bg-gray-900 hover:bg-gray-800 transition-colors rounded-xl text-white text-3xl font-bold'
 				>
 					<ChevronRight className='w-6 h-6' />
 				</button>
