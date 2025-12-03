@@ -93,7 +93,7 @@ export function Projects() {
 	return (
 		<section
 			id='projects'
-			className='pb-20 pt-28 bg-gradient-to-b min-h-[100dvh] h-fit from-[--bg_pri] to-[#F5F7FA]'
+			className='pb-20 pt-16 md:pt-28 bg-gradient-to-b min-h-[100dvh] h-fit from-[--bg_pri] to-[#F5F7FA]'
 		>
 			<div className='sect-container mx-auto px-4 flex flex-col gap-12 md:gap-14'>
 				<h2 className='text-5xl text-gray-900 font-bold text-center hidder'>
