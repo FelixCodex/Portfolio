@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useLanguage } from '../hooks/useLanguage';
-import jd1 from '/jd1.png';
-import jd2 from '/jd2.png';
-import jd3 from '/jd3.png';
+import jd1 from '/jd1.webp';
+import jd2 from '/jd2.webp';
+import jd3 from '/jd3.webp';
 import pf1 from '/pf-home.webp';
 import pf2 from '/pf-workspace.webp';
 import pf3 from '/pf-network.webp';
